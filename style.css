@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow+Condensed');
+#home{
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: bolder;
+}
+.imgg{
+    margin: 15px 0px 0px 0px;
+}
+.nav-pills > li > a.active {
+    background-color: #398791 !important;
+}
+.hothot img {
+    width: 100px;
+}
