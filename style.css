@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Barlow+Condensed');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+* {
+    font-family: 'Roboto', sans-serif;
+}
 #home{
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: bolder;
@@ -10,5 +14,48 @@
     background-color: #398791 !important;
 }
 .hothot img {
-    width: 100px;
+    width: 145px;
+}
+.hothot p {
+    text-align: center;
+}
+.hothot>div{
+    padding: 0;
+}
+.hothot {
+    padding: 15px;
+}
+.nav-pills a.nav-link{
+    color: black;
+    border-radius: 0px;
+}
+.thuhang {
+    font-weight: bold;
+    padding-top: 10px;
+    width: 30px;
+    height: 50px;
+    /* background-color: aquamarine; */
+    /* display: block; */
+    float: left;
+    /* text-align: center; */
+    /* vertical-align: bottom; */
+}
+.tenbaihat {
+    display: block;
+    float: left;
+    font-weight: bold;
+}
+.tencasi {
+    /* float: none; */
+    clear: both;
+}
+.list-group-item {
+    padding: 5px !important;
+}
+.anhds {
+    float: left;
+    margin-right: 10px;
+}
+.card {
+    margin-bottom: 15px;
 }
