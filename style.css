@@ -71,10 +71,6 @@
 .card {
     margin-bottom: 15px;
 }
-.dropdown-divider {
-    margin-bottom: 5px !important;
-    margin-top: 5px !important;
-}
 .dropdown-item:hover {
     background-color: #398791 !important;
     color: white !important;
