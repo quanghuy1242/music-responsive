@@ -24,8 +24,11 @@
 .nav-pills > li > a.active {
     background-color: #398791 !important;
 }
+.hothot .card{
+    width: 157px;
+}
 .hothot img {
-    width: 145px;
+    width: 155px;
 }
 .hothot p {
     text-align: center;
@@ -35,6 +38,9 @@
 }
 .hothot {
     padding: 15px;
+}
+.hothot .col {
+    margin: 0px 10px 0px 10px;
 }
 .nav-pills a.nav-link{
     color: black;
@@ -52,16 +58,26 @@
     /* vertical-align: bottom; */
 }
 .tenbaihat {
-    display: block;
-    float: left;
+    width: 200px;
+    /* white-space: nowrap; */
+    /* float: left; */
+    /* display: inline-block; */
+    /* float: left; */
     font-weight: bold;
 }
 .tencasi {
+    /* display: block; */
+    width: 200px;
+    /* word-wrap: break-word; */
+    /* float: left; */
     /* float: none; */
     clear: both;
 }
 .list-group-item {
     padding: 5px !important;
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    white-space: nowrap;
 }
 .anhds {
     float: left;
@@ -79,7 +95,7 @@
     zoom: 80%;
 }
 /* tip */
-[class*="tip-"]::after {
+[class*="tips-"]::after {
     content: "";
     background-color: #ffffff;
     position: absolute;
@@ -89,26 +105,50 @@
     border-right: none;
     border-bottom: none;
 }
-.tip-bxh:after {
+.tips-bxh:after {
     transform: rotate(45deg);
     top: -5px;
     left: 20px;
 }
-.tip-cd:after {
+.tips-cd:after {
     transform: rotate(45deg);
     top: -5px;
     left: 27px;
 }
-.tip-dn:after {
+.tips-dn:after {
     transform: rotate(45deg);
     top: -5px;
     left: 129px;
 }
 @media screen and (max-width: 767px) {
-    [class*="tip-"]::after {
+    [class*="tips-"]::after {
         transform: rotate(45deg);
         top: 38px;
         left: 13px;
     }
 }
 /* end tip */
+/* #carouselId .list-inline {
+    white-space:nowrap;
+    overflow-x:auto;
+} */
+
+#carouselId .carousel-indicators {
+    position: static;
+    left: initial;
+    /* widt h: initial; */
+    /* margin-left: initial; */
+}
+
+#carouselId .carousel-indicators > li {
+    width: initial;
+    height: initial;
+    text-indent: initial;
+}
+.carousel-margin {
+    margin-bottom: 5px;
+}
+.carousel-indicators {
+    margin-left: 0px!important;
+    margin-right: 0px!important;
+}

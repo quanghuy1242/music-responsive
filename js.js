@@ -11,4 +11,5 @@ $(function () {
             return $(title).children(".popover-heading").html();
         }
     });
+    $('[data-toggle="tooltip"]').tooltip(); 
 });
