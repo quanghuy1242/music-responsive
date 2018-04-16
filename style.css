@@ -18,6 +18,9 @@
     color: white !important;
     /* font-weight: 600; */
 }
+.navbar-nav li>a i {
+    transition: none;
+}
 .imgg{
     margin: 15px 0px 0px 0px;
 }
