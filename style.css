@@ -133,6 +133,7 @@
     overflow-x:auto;
 } */
 
+/* slide */
 #carouselId .carousel-indicators {
     position: static;
     left: initial;
@@ -151,4 +152,10 @@
 .carousel-indicators {
     margin-left: 0px!important;
     margin-right: 0px!important;
+}
+/* end slide */
+
+#t1, #t2, #t3 {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
 }
