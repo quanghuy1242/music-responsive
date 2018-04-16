@@ -79,75 +79,40 @@
     background-color: #398791 !important;
     color: white !important;
 }
-/* tip */
-/* [class*="dropdownsss-menu-tip-"]::after {
-  content: '';
-  position: absolute;
-  width: .7rem;
-  height: .5rem;
-  background-color: white;  */
-  /* For SCSS use $dropdown-bg */
-  /* border: solid 1px rgba(0, 0, 0, .15);  */
-  /* For SCSS use $dropdown-bg */
-  /* border-bottom: none;
-  border-left: none; */
-/* } */
-
-/* North */
-/* .dropdown-menu-tip-n::after {
-  top: calc(-.25rem - 1px);
-  left: calc(50% - .25rem);
-  transform: rotate(-45deg);
-} */
 .dropdown-toggle::after {
     zoom: 80%;
 }
-/* Northeast */
-.dropdown-menu-tip-ne-dn::after {
-    content: '';
+/* tip */
+[class*="tip-"]::after {
+    content: "";
+    background-color: #ffffff;
     position: absolute;
-    width: .7rem;
-    height: .5rem;
-    background-color: white;
-    top: calc(-.25rem - -1px);
-    right: 0.6rem;
-    transform: rotate(-45deg);
+    width: 10px;
+    height: 10px;
+    /* border: 1px solid rgba(0,0,0,.15); */
+    border-right: none;
+    border-bottom: none;
 }
-.dropdown-menu-tip-ne-qh::after {
-    content: '';
-    position: absolute;
-    width: .7rem;
-    height: .5rem;
-    background-color: white;
-    top: calc(-.25rem - -1px);
-    right: 2.3rem;
-    transform: rotate(-45deg);
+.tip-bxh:after {
+    transform: rotate(45deg);
+    top: -5px;
+    left: 20px;
 }
-/* Northwest */
-/* .dropdown-menu-tip-nw::after {
-  top: calc(-.25rem - 1px);
-  left: 1rem;
-  transform: rotate(-45deg);
-} */
-
-/* South */
-/* .dropdown-menu-tip-s::after {
-  left: calc(50% - .25rem);
-  bottom: calc(-.25rem - 1px);
-  transform: rotate(135deg);
-} */
-
-/* Southeast */
-/* .dropdown-menu-tip-se::after {
-  right: 1rem;
-  bottom: calc(-.25rem - 1px);
-  transform: rotate(135deg);
-} */
-
-/* Southwest */
-/* .dropdown-menu-tip-sw::after {
-  left: 1rem;
-  bottom: calc(-.25rem - 1px);
-  transform: rotate(135deg);
-} */
-/* endtip */
+.tip-cd:after {
+    transform: rotate(45deg);
+    top: -5px;
+    left: 27px;
+}
+.tip-dn:after {
+    transform: rotate(45deg);
+    top: -5px;
+    left: 129px;
+}
+@media screen and (max-width: 767px) {
+    [class*="tip-"]::after {
+        transform: rotate(45deg);
+        top: 38px;
+        left: 13px;
+    }
+}
+/* end tip */
