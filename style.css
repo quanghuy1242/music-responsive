@@ -129,6 +129,9 @@
         top: 38px;
         left: 13px;
     }
+    .imginfo {
+        display: none;
+    }
 }
 /* end tip */
 /* #carouselId .list-inline {
@@ -161,4 +164,55 @@
 #t1, #t2, #t3 {
     padding-left: 0px !important;
     padding-right: 0px !important;
+}
+h4 {
+    color: #164954 !important;
+}
+/* khungbaihat */
+.khungbaihat .card-footer {
+    padding: 0;
+}
+.khungbaihat .card-body {
+    /* padding: 5px; */
+    text-align: center;
+    background-color: #cae6e1;
+}
+h4.card-title {
+    margin-bottom: 3px;
+}
+/* end .khungbaihat */
+
+.imginfo {
+    width: 100px !important;
+    margin: 15px;
+}
+.khungthongtin .card-body {
+    padding: 5px!important;
+    /* height: 50px; */
+    /* overflow: hidden;  */
+    /* text-overflow: ellipsis;  */
+    /* white-space: nowrap; */
+    /* word-wrap: break-word; */
+}
+.tttest {
+    margin-left: -30px!important;
+}
+
+.khungloibaihat .card-header {
+    padding: 0;
+}
+.khungloibaihat {
+    border-radius: 0px !important;
+}
+.lyrics {
+    width: 100%!important;
+    background-color: #398791!important;
+    border: none!important;
+    border-radius: 0px!important;
+    outline: none!important;
+}
+@media screen and (min-width:767px){
+    .card-columns {
+        column-count: 2!important;
+    }
 }
