@@ -184,7 +184,7 @@ h4 {
 .khungbaihat .card-footer {
     padding: 0;
     background-color: #fafafa;
-    height: 34px;
+    /* height: 34px; */
 }
 .khungbaihat .card-body {
     /* padding: 5px; */
@@ -311,58 +311,64 @@ h4.card-title {
 
 /* audio player */
 .myaudioplayer {
-    padding-right: 10px;
+    /* padding-right: 10px; */
     display: block;
     /* background-color: #164954; */
-    height: 32px;
+    /* height: 32px; */
     width: 100%;
+    margin-bottom: -10px!important;
+}
+.myaudioplayer label {
+    margin-bottom: 0px!important;
+    color: #164954;
 }
 .myaudioplayer .list-inline-item {
     margin-left: 0!important;
     margin-right: 0!important;
+}
+.btn-group {
+    margin-top: -10px;
+    /* border: 1px solid #398791; */
 }
 .playpause {
     width: 20px;
     height: 30px;
 }
 #btnPlay {
-    height: 30px;
+    /* height: 30px; */
     width: 30px;
-    background-position: center;
-    border: none;
+    background-position: center!important;
+    /* border: none; */
     outline: 0px;
     cursor: pointer;
+    background-size: 70% 70%;
+    
 }
 .playplay {
-
-    margin-left: 3px;
-    background-size: 55% 55%!important;
+    /* content: 'a'; */
+    /* margin-left: 3px; */
+    /* background-size: 70%!important; */
     background: url(../image/svg/play-arrow.svg) no-repeat;
 }
 .pause {
-    margin-left: 3px;
-    background-size: 55% 55%!important;
+    /* margin-left: 3px; */
+    /* background-size: 70%!important; */
     background: url(../image/svg/pause-button.svg) no-repeat;
 }
-#lblTime,#endtime{
-    margin-top: 5px;
-    font-size: smaller;
-    color: #164954;
-}
 #btnpn {
-    height: 30px;
+    /* height: 30px; */
     width: 30px;
     background-position: center;
-    background-size: 70% 70%;
-    border: none;
-    outline: 0px;
+    background-size: 50% 50%;
+    /* border: none; */
+    /* outline: 0px; */
     cursor: pointer;
 }
 .prev {
-    background-size: 50% 50% !important;
+    /* background-size: 50% 50% !important; */
     background: url(../image/svg/previous-track.svg) no-repeat;
 }
 .next {
-    background-size: 50% 50% !important;
+    /* background-size: 50% 50% !important; */
     background: url(../image/svg/play-next-button.svg) no-repeat;
 }

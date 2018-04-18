@@ -10,7 +10,7 @@
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="../../audioplayer/audioplayer.css">
   </head>
-  <body onresize="cdef()" >
+  <body onresize="cdesf()" >
     <nav class="navbar navbar-expand-md navbar-dark fixed-top justify-content-center" style="background-color: #398791;">
         <div class="container">
             <a class="navbar-brand" href="../../index.html" id="home">NHACMP3</a>
@@ -81,27 +81,31 @@
                     <div class="card-footer">
                         <audio id="audioaudio" src="../../musicdata/1.mp3" style="width: 100%;"></audio>
                         <div class="myaudioplayer" id="myaudioplayer1">
-                            <ul class="list-inline">
-                                <li class="list-inline-item" style="float: left;">
-                                    <!-- <input type="button" value="Play" id="btnPlay" onclick="PlayNow()"> -->
-                                    <button class="playplay" id="btnPlay" onclick="PlayNow()" value=""></button>
-                                </li>
-                                <li class="list-inline-item" style="float: left;">
-                                    <label style="margin-right: 5px;" id="lblTime">00:00</label>
-                                </li>
-                                <li class="list-inline-item my-auto">
-                                    <input type="range" step="any" id="seekbar"
-                        onchange="ChangeTheTime()" style="margin-top: 6px;" value="0">
-                                </li>
-                                <li class="list-inline-item" style="float: right;width: 80px;">
-                                        <input type="range" min="0" max="1" step="0.1" id="volume"
-                        onchange="ChangeVolume()" style="margin-top: 6px;">
-                                </li>
-                                <li class="list-inline-item" style="float: right;">
-                                    <label style="margin-right: 5px;" id="endtime">00:00</label>
-                                </li>
-                                
-                            </ul>
+                            <table class="table table-sm" style="margin-bottom: 10px;">
+                                <tr>
+                                    <td colspan="2">
+                                        <input type="range" step="any" id="seekbar"
+                                        onchange="ChangeTheTime()" style="margin-top: 6px;width: 100%;" value="0">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="row" style="padding-top: 0px;padding-bottom: 0px;border-top: none">
+                                        <div class="btn-group btn-group-sm mx-auto">
+                                            <button class="btn btn-light playplay" id="btnPlay" onclick="PlayNow()"></button>
+                                            <button class="btn btn-light" id="lblTime">
+                                                    <label id="lblTime">00:00</label>
+                                            </button>
+                                            <button class="btn btn-light">
+                                                    <label id="endtime">00:00</label>
+                                            </button>
+                                            <button class="btn btn-light" id="volumev">
+                                                    <input type="range" min="0" max="1" step="0.1" id="volume"
+                                                    onchange="ChangeVolume()" style="margin-bottom: 10px;">
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -114,7 +118,7 @@
                     var xx = a - d - e - f - g - 25;
                     var xy = xx +'px';
                     // alert(a);
-                    document.getElementById("seekbar").style.width = xy;
+                    document.getElementById("seekbars").style.width = xy;
                 </script>
                 <div class="card khungthongtin">
                     <div class="row">

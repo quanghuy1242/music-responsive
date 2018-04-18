@@ -11,7 +11,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../audioplayer/audioplayer.css">
   </head>
-  <body onresize="abcd()">
+  <body>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top justify-content-center" style="background-color: #398791;">
         <div class="container">
             <a class="navbar-brand" href="../../index.html" id="home">NHACMP3</a>
@@ -81,61 +81,42 @@
                     </div>
                     <div class="card-footer" id="player">
                         <div style="width: 100%;">
-                            <!-- <div style="float: left;width: 73px;">
-                                <button class="btn nextprev" onclick="prev()">
-                                    <img src="../../image/svg/prev.svg" alt="prev" width="24" style="padding-top: 1px">
-                                </button>
-                                <button class="btn nextprev"onclick="next()">
-                                        <img src="../../image/svg/next.svg" alt="next" width="24" style="padding-top: 1px">
-                                </button>
-                            </div> -->
                             <div>
                                 <audio src="" id="audioaudio" buffered></audio>
                                 <div class="myaudioplayer" id="myaudioplayer1">
-                                    <ul class="list-inline">
-                                        <li class="list-inline-item" style="float: left;">
-                                            <button id="btnpn" class="prev" onclick="prev()"></button>
-                                        </li>
-                                        <li class="list-inline-item" style="float: left;">
-                                            <button class="playplay" id="btnPlay" onclick="PlayNow()" value=""></button>
-                                        </li>
-                                        <li class="list-inline-item" style="float: left;">
-                                            <button id="btnpn" class="next" onclick="next()"></button>
-                                        </li>
-                                        <li class="list-inline-item" style="float: left;">
-                                            <label style="margin-right: 5px;" id="lblTime">00:00</label>
-                                        </li>
-                                        <li class="list-inline-item my-auto">
-                                            <input type="range" step="any" id="seekbar"
-                                onchange="ChangeTheTime()" style="margin-top: 6px;" value="0">
-                                        </li>
-                                        <li class="list-inline-item" style="float: right;width: 80px;">
-                                                <input type="range" min="0" max="1" step="0.1" id="volume"
-                                onchange="ChangeVolume()" style="margin-top: 6px;">
-                                        </li>
-                                        <li class="list-inline-item" style="float: right;">
-                                            <label style="margin-right: 5px;" id="endtime">00:00</label>
-                                        </li>
-                                        
-                                    </ul>
+
+                                    <table class="table table-sm" style="margin-bottom: 10px;">
+                                        <tr>
+                                            <td colspan="2">
+                                                <input type="range" step="any" id="seekbar"
+                                                onchange="ChangeTheTime()" style="margin-top: 6px;width: 100%;" value="0">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="row" style="padding-top: 0px;padding-bottom: 0px;border-top: none">
+                                                <div class="btn-group btn-group-sm mx-auto">
+                                                    <button class="btn btn-light prev" id="btnpn" onclick="prev()"></button>
+                                                    <button class="btn btn-light playplay" id="btnPlay" onclick="PlayNow()"></button>
+                                                    <button class="btn btn-light next" id="btnpn" onclick="next()"></button>
+                                                    <button class="btn btn-light" id="lblTime">
+                                                            <label id="lblTime">00:00</label>
+                                                    </button>
+                                                    <button class="btn btn-light">
+                                                            <label id="endtime">00:00</label>
+                                                    </button>
+                                                    <button class="btn btn-light" id="volumev">
+                                                            <input type="range" min="0" max="1" step="0.1" id="volume"
+                                                            onchange="ChangeVolume()" style="margin-bottom: 10px;">
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <script>
-                    
-                        var a = document.getElementById("myaudioplayer1").offsetWidth;
-                        var d = document.getElementById("btnPlay").offsetWidth;
-                        var e = document.getElementById("lblTime").offsetWidth;
-                        var f = document.getElementById("volume").offsetWidth;
-                        var g = document.getElementById("endtime").offsetWidth;
-                        var xx = a - d - e - f - g - 85;
-                        var xy = xx +'px';
-                        // alert(a);
-                        document.getElementById("seekbar").style.width = xy;
-                        
-                    </script>
                 <div class="card khungthongtin">
                     <div class="row">
                         <div class="col-auto my-auto">
@@ -176,58 +157,68 @@
                             dangphat[i].style.opacity = "1";
                             if (audio.play) {
                                 btnPlay.className = "";
-                                btnPlay.className = "pause";
+                                btnPlay.className = "btn btn-light pause";
                             } else {
                                 audio.pause();
                                 btnPlay.className = "";
-                                btnPlay.className = "playplay";
+                                btnPlay.className = "btn btn-light playplay";
                             }
                             
                         }
 
 						function prev(){
-                            getduration();
-                            if (audio.play) {
-                                btnPlay.className = "";
-                                btnPlay.className = "pause";
-                            } else {
-                                audio.pause();
-                                btnPlay.className = "";
-                                btnPlay.className = "playplay";
+
+                            if( stt > 1 ){
+                                if (audio.play) {
+                                    btnPlay.className = "";
+                                    btnPlay.className = "btn btn-light pause";
+                                } else {
+                                    audio.pause();
+                                    btnPlay.className = "";
+                                    btnPlay.className = "btn btn-light playplay";
+                                }
+                                var stt = document.getElementById("stt").innerHTML;
+                                
+
+
+                                document.getElementById("namesong").innerHTML=tenbh[stt-2].innerHTML;
+                                document.getElementById("nameart").innerHTML=tencs[stt-2].innerHTML;
+                                document.getElementById("audioaudio").src = nhacs[stt-2];
+                                document.getElementById("audioaudio").autoplay="autoplay";
+                                document.getElementById("stt").innerHTML = stt-1;
+                                getduration();
+                                for(var x = 0;x < dangphat.length ; x++){
+                                    dangphat[x].style.opacity = "0";
+                                }
+                                dangphat[stt-2].style.opacity = "1";
                             }
-							var stt = document.getElementById("stt").innerHTML;
-							document.getElementById("namesong").innerHTML=tenbh[stt-2].innerHTML;
-							document.getElementById("nameart").innerHTML=tencs[stt-2].innerHTML;
-							document.getElementById("audioaudio").src = nhacs[stt-2];
-							document.getElementById("audioaudio").autoplay="autoplay";
-                            document.getElementById("stt").innerHTML = stt-1;
-                            getduration();
-                            for(var x = 0;x < dangphat.length ; x++){
-                                dangphat[x].style.opacity = "0";
-                            }
-                            dangphat[stt-2].style.opacity = "1";
 						}
 						function next(){
-                            getduration();
-                            if (audio.play) {
+
+                            if(stt < tenbh.length) {
+                                if (audio.play) {
                                 btnPlay.className = "";
-                                btnPlay.className = "pause";
+                                btnPlay.className = "btn btn-light pause";
                             } else {
                                 audio.pause();
                                 btnPlay.className = "";
-                                btnPlay.className = "playplay";
+                                btnPlay.className = "btn btn-light playplay";
                             }
-							var stt = document.getElementById("stt").innerHTML;
-							document.getElementById("namesong").innerHTML=tenbh[stt].innerHTML;
-							document.getElementById("nameart").innerHTML=tencs[stt].innerHTML;
-							document.getElementById("audioaudio").src = nhacs[stt];
-							document.getElementById("audioaudio").autoplay="autoplay";
+                            var stt = document.getElementById("stt").innerHTML;
+                            document.getElementById("namesong").innerHTML=tenbh[stt].innerHTML;
+                            document.getElementById("nameart").innerHTML=tencs[stt].innerHTML;
+                            document.getElementById("audioaudio").src = nhacs[stt];
+                            document.getElementById("audioaudio").autoplay="autoplay";
                             document.getElementById("stt").innerHTML = parseInt(stt)+1;
                             getduration();
                             for(var x = 0;x < dangphat.length ; x++){
                                 dangphat[x].style.opacity = "0";
                             }
                             dangphat[stt].style.opacity = "1";
+                        }
+
+                            // getduration();
+                            
 						}
                     </script>
                     

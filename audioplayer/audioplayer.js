@@ -73,14 +73,14 @@ function PlayNow() {
     if (audio.paused) {
         audio.play();
         btnPlay.className = "";
-        btnPlay.className = "pause";
+        btnPlay.className = "btn btn-light pause";
     } else if (audio.ended) {
         audio.currentTime = 0;
         audio.play();
     } else if(audio.play) {
         audio.pause();
         btnPlay.className = "";
-        btnPlay.className = "playplay";
+        btnPlay.className = "btn btn-light playplay";
     }
 }
 // fires when Pause button is clicked
