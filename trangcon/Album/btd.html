@@ -11,7 +11,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../audioplayer/audioplayer.css">
   </head>
-  <body onresize="abcd()" onload="getduration()">
+  <body onresize="abcd()">
     <nav class="navbar navbar-expand-md navbar-dark fixed-top justify-content-center" style="background-color: #398791;">
         <div class="container">
             <a class="navbar-brand" href="../../index.html" id="home">NHACMP3</a>
@@ -159,11 +159,8 @@
                         var btnPlay = document.getElementById("btnPlay");
                         var audio = new Audio();
                         // PlayNow();
-						var nhacs = ["../../musicdata/BornToDie.mp3","../../musicdata/1.mp3","https://drive.google.com/uc?export=download&id=1k6y1BH8ypbpbSFznETYjB09tVuYrOMIA","https://drive.google.com/uc?export=download&id=10wjpLRMnEwxmUbz-fXV89YkYt-2zPrFv","https://drive.google.com/uc?export=download&id=1HyDQyzX_isW6EXUSoI4jqF_whEOeDgHi","https://drive.google.com/uc?export=download&id=1AjEGPqLVNymLOTKvNhzNoxQOC6D3E2Rs","https://drive.google.com/uc?export=download&id=1Uh-NoMnOlB2Qy5SIaIfmRA_qBs13ec3X","https://drive.google.com/uc?export=download&id=1EYk8iHtFdFlQnZpfeenBvc9GDf9yW-Uj","https://drive.google.com/uc?export=download&id=1IWFUrPzH1YqF3TeRZVXsmEKUEtqiRLYd","https://drive.google.com/uc?export=download&id=1Lp-sgf-l3AOaUt8b7Nzkf8KNKqe-76iP","https://drive.google.com/uc?export=download&id=1ITE_2DF-6DA8EdL-TseVUjaq0hd6SUcL","https://drive.google.com/uc?export=download&id=12B2ugf9yG-UH7UG2ihWfNK6fIzxYlRBP"];
+						var nhacs = ["../../musicdata/BornToDie.mp3","https://drive.google.com/uc?export=download&id=1nMbLBDGutvZj13qe9xY1Y0ZkALNtB1LW","https://drive.google.com/uc?export=download&id=1k6y1BH8ypbpbSFznETYjB09tVuYrOMIA","https://drive.google.com/uc?export=download&id=10wjpLRMnEwxmUbz-fXV89YkYt-2zPrFv","https://drive.google.com/uc?export=download&id=1HyDQyzX_isW6EXUSoI4jqF_whEOeDgHi","https://drive.google.com/uc?export=download&id=1AjEGPqLVNymLOTKvNhzNoxQOC6D3E2Rs","https://drive.google.com/uc?export=download&id=1Uh-NoMnOlB2Qy5SIaIfmRA_qBs13ec3X","https://drive.google.com/uc?export=download&id=1EYk8iHtFdFlQnZpfeenBvc9GDf9yW-Uj","https://drive.google.com/uc?export=download&id=1IWFUrPzH1YqF3TeRZVXsmEKUEtqiRLYd","https://drive.google.com/uc?export=download&id=1Lp-sgf-l3AOaUt8b7Nzkf8KNKqe-76iP","https://drive.google.com/uc?export=download&id=1ITE_2DF-6DA8EdL-TseVUjaq0hd6SUcL","https://drive.google.com/uc?export=download&id=12B2ugf9yG-UH7UG2ihWfNK6fIzxYlRBP"];
 						function Playnhac(i){
-							// nhac.src = nhacs[i];
-                            // nhac.play();
-                            // PlayNow();
                             
 							document.getElementById("namesong").innerHTML=tenbh[i].innerHTML;
 							document.getElementById("nameart").innerHTML=tencs[i].innerHTML;
@@ -185,23 +182,6 @@
                                 btnPlay.className = "";
                                 btnPlay.className = "playplay";
                             }
-                            
-                        }
-                        
-                        function vvv (i) {
-                            // document.getElementById("audioaudio").src = nhacs[i];
-                            // document.getElementById("audioaudio").duration = 0;
-                            // alert(document.getElementById("audioaudio").duration);
-                            // var sec=0,min=0;
-                            // sec = document.getElementById("audioaudio").duration % 3600;
-                            // min = Math.floor(sec / 60);
-                            // sec = Math.floor(sec % 60);
-                            // if (sec.toString().length < 2) sec = "0" + sec;
-                            // if (min.toString().length < 2) min = "0" + min;
-                            // document.getElementById('endtime').innerHTML = min + ":" + sec;
-                            // Playnhac(i);
-                            getduration();
-                            Playnhac(i);
                             
                         }
 
@@ -257,13 +237,13 @@
                             <tr>
                                 <td><i class="fab fa-itunes-note dangphat"></i></td>
                                 <td scope="row" class="thutubaihat">1</td>
-                                <td class="baihatalbum" onclick="vvv(0)" id="defaultplay">Born to Die</td>
+                                <td class="baihatalbum" onclick="Playnhac(0)" id="defaultplay">Born to Die</td>
                                 <td class="nghesialbum">Lana Del Rey</td>
                             </tr>
                             <tr>
                                 <td><i class="fab fa-itunes-note dangphat"></i></td>
                                 <td scope="row" class="thutubaihat">2</td>
-                                <td class="baihatalbum" onclick="vvv(1)">Off to the Races</td>
+                                <td class="baihatalbum" onclick="Playnhac(1)">Off to the Races</td>
                                 <td class="nghesialbum">Lana Del Rey</td>
                             </tr>
                             <tr>

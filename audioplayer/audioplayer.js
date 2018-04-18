@@ -4,17 +4,16 @@ var volumeRange = document.getElementById('volume');
 var seekbar = document.getElementById('seekbar');
 
 window.onload = function () {
-    getduration();
+    // getduration();
     audio.addEventListener('timeupdate', UpdateTheTime, false);
     audio.addEventListener('durationchange', SetSeekBar, false);
     volumeRange.value = audio.volume;
     // PlayNow();
 }
 window.onmouseover = function () {
-    getduration();
+    // getduration();
 }
 
-document.getElementById("")
 
 function getduration() {
     var sec = document.getElementById("audioaudio").duration;
@@ -23,6 +22,8 @@ function getduration() {
     sec = Math.floor(sec % 60);
     if (sec.toString().length < 2) sec = "0" + sec;
     if (min.toString().length < 2) min = "0" + min;
+    if (sec.toString() == "NaN") sec = "00";
+    if (min.toString() == "NaN") min = "00";
     // document.getElementById('lblTime').innerHTML = h + ":" + min + ":" + sec;
     document.getElementById('endtime').innerHTML = min + ":" + sec;
 }
@@ -62,12 +63,13 @@ function UpdateTheTime() {
     seekbar.min = audio.startTime;
     seekbar.max = audio.duration;
     seekbar.value = audio.currentTime;
+    getduration();
 }
 
 var btnPlay = document.getElementById("btnPlay");
 // fires when Play button is clicked
-function PlayNow() {
-    getduration();
+function PlayNow() { 
+    // getduration();
     if (audio.paused) {
         audio.play();
         btnPlay.className = "";

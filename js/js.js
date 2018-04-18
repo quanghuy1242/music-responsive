@@ -17,7 +17,7 @@ $(function () {
     document.getElementById("defaultplay").click();
     btnPlay.className = "";
     btnPlay.className = "playplay";
-    getduration();
+    // getduration();
     // alert(document.getElementById("endtime").innerHTML);
     document.getElementById("audioaudio").pause();
 });
