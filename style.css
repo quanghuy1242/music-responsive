@@ -132,6 +132,18 @@
     .imginfo {
         display: none;
     }
+    .card-columns {
+        column-count: 1!important;
+    }
+    .khungthongtin .card-body {
+        padding: 10px!important;
+        line-height: 1.3;
+        /* height: 50px; */
+        /* overflow: hidden;  */
+        /* text-overflow: ellipsis;  */
+        /* white-space: nowrap; */
+        /* word-wrap: break-word; */
+    }
 }
 /* end tip */
 /* #carouselId .list-inline {
@@ -189,7 +201,7 @@ h4.card-title {
     margin: 15px;
 }
 .khungthongtin .card-body {
-    padding: 5px!important;
+    padding: 5px;
     line-height: 1.3;
     /* height: 50px; */
     /* overflow: hidden;  */
@@ -213,6 +225,7 @@ h4.card-title {
     border: none!important;
     border-radius: 0px!important;
     outline: none!important;
+    box-shadow: none !important;
 }
 @media screen and (min-width:767px){
     .card-columns {
@@ -282,4 +295,15 @@ h4.card-title {
 }
 .anhanh {
     opacity: 1;
+}
+@keyframes spin {
+    to {transform:rotate(359deg);}
+}
+
+.spin {
+    animation: spin 1000ms linear infinite;
+}
+.dangphat {
+    opacity: 0;
+    animation: spin 1700ms linear infinite;
 }

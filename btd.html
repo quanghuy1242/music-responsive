@@ -115,10 +115,12 @@
                     </div>
                 </div>
                 <script>
+                    //https://drive.google.com/uc?export=download&id=1XhyXIlvfN1yY7t8PSjGHsmDhVHIf5auq
 						var tenbh = document.getElementsByClassName("baihatalbum");
 						var tencs = document.getElementsByClassName("nghesialbum");
+                        var dangphat = document.getElementsByClassName("dangphat");
 						var nhac = new Audio();
-						var nhacs = ["https://drive.google.com/uc?export=download&id=1XhyXIlvfN1yY7t8PSjGHsmDhVHIf5auq","https://drive.google.com/uc?export=download&id=1nMbLBDGutvZj13qe9xY1Y0ZkALNtB1LW","https://drive.google.com/uc?export=download&id=1k6y1BH8ypbpbSFznETYjB09tVuYrOMIA","https://drive.google.com/uc?export=download&id=10wjpLRMnEwxmUbz-fXV89YkYt-2zPrFv","https://drive.google.com/uc?export=download&id=1HyDQyzX_isW6EXUSoI4jqF_whEOeDgHi","https://drive.google.com/uc?export=download&id=1AjEGPqLVNymLOTKvNhzNoxQOC6D3E2Rs","https://drive.google.com/uc?export=download&id=1Uh-NoMnOlB2Qy5SIaIfmRA_qBs13ec3X","https://drive.google.com/uc?export=download&id=1EYk8iHtFdFlQnZpfeenBvc9GDf9yW-Uj","https://drive.google.com/uc?export=download&id=1IWFUrPzH1YqF3TeRZVXsmEKUEtqiRLYd","https://drive.google.com/uc?export=download&id=1Lp-sgf-l3AOaUt8b7Nzkf8KNKqe-76iP","https://drive.google.com/uc?export=download&id=1ITE_2DF-6DA8EdL-TseVUjaq0hd6SUcL","https://drive.google.com/uc?export=download&id=12B2ugf9yG-UH7UG2ihWfNK6fIzxYlRBP"];
+						var nhacs = ["musicdata/BorntoDie.mp3","https://drive.google.com/uc?export=download&id=1nMbLBDGutvZj13qe9xY1Y0ZkALNtB1LW","https://drive.google.com/uc?export=download&id=1k6y1BH8ypbpbSFznETYjB09tVuYrOMIA","https://drive.google.com/uc?export=download&id=10wjpLRMnEwxmUbz-fXV89YkYt-2zPrFv","https://drive.google.com/uc?export=download&id=1HyDQyzX_isW6EXUSoI4jqF_whEOeDgHi","https://drive.google.com/uc?export=download&id=1AjEGPqLVNymLOTKvNhzNoxQOC6D3E2Rs","https://drive.google.com/uc?export=download&id=1Uh-NoMnOlB2Qy5SIaIfmRA_qBs13ec3X","https://drive.google.com/uc?export=download&id=1EYk8iHtFdFlQnZpfeenBvc9GDf9yW-Uj","https://drive.google.com/uc?export=download&id=1IWFUrPzH1YqF3TeRZVXsmEKUEtqiRLYd","https://drive.google.com/uc?export=download&id=1Lp-sgf-l3AOaUt8b7Nzkf8KNKqe-76iP","https://drive.google.com/uc?export=download&id=1ITE_2DF-6DA8EdL-TseVUjaq0hd6SUcL","https://drive.google.com/uc?export=download&id=12B2ugf9yG-UH7UG2ihWfNK6fIzxYlRBP"];
 						function Playnhac(i){
 							// nhac.src = nhacs[i];
 							// nhac.play();
@@ -127,6 +129,10 @@
 							document.getElementById("audioaudio").src = nhacs[i];
 							document.getElementById("audioaudio").autoplay="autoplay";
 							document.getElementById("stt").innerHTML = i+1;
+                            for(var x = 0;x < dangphat.length ; x++){
+                                dangphat[x].style.opacity = "0";
+                            }
+                            dangphat[i].style.opacity = "1";
 						}
 						function prev(){
 							var stt = document.getElementById("stt").innerHTML;
@@ -149,61 +155,73 @@
                     <div class="card-body">
                         <table class="table table-hover table-striped table-sm">
                             <tr>
+                                <td><i class="fab fa-itunes-note dangphat"></i></td>
                                 <td scope="row" class="thutubaihat">1</td>
                                 <td class="baihatalbum" onclick="Playnhac(0)" id="defaultplay">Born to Die</td>
                                 <td class="nghesialbum">Lana Del Rey</td>
                             </tr>
                             <tr>
+                                <td><i class="fab fa-itunes-note dangphat"></i></td>
                                 <td scope="row" class="thutubaihat">2</td>
                                 <td class="baihatalbum" onclick="Playnhac(1)">Off to the Races</td>
                                 <td class="nghesialbum">Lana Del Rey</td>
                             </tr>
                             <tr>
+                                <td><i class="fab fa-itunes-note dangphat"></i></td>
                                 <td scope="row" class="thutubaihat">3</td>
                                 <td class="baihatalbum" onclick="Playnhac(2)">Blue Jeans</td>
                                 <td class="nghesialbum">Lana Del Rey</td>
                             </tr>
                             <tr>
+                                <td><i class="fab fa-itunes-note dangphat"></i></td>
                                 <td scope="row" class="thutubaihat">4</td>
                                 <td class="baihatalbum" onclick="Playnhac(3)">Video Games</td>
                                 <td class="nghesialbum">Lana Del Rey</td>
                             </tr>
                             <tr>
+                                <td><i class="fab fa-itunes-note dangphat"></i></td>
                                 <td scope="row" class="thutubaihat">5</td>
                                 <td class="baihatalbum" onclick="Playnhac(4)">Diet Mountain Dew</td>
                                 <td class="nghesialbum">Lana Del Rey</td>
                             </tr>
                             <tr>
+                                <td><i class="fab fa-itunes-note dangphat"></i></td>
                                 <td scope="row" class="thutubaihat">6</td>
                                 <td class="baihatalbum" onclick="Playnhac(5)">National Anthem</td>
                                 <td class="nghesialbum">Lana Del Rey</td>
                             </tr>
                             <tr>
+                                <td><i class="fab fa-itunes-note dangphat"></i></td>
                                 <td scope="row" class="thutubaihat">7</td>
                                 <td class="baihatalbum" onclick="Playnhac(6)">Dark Paradise</td>
                                 <td class="nghesialbum">Lana Del Rey</td>
                             </tr>
                             <tr>
+                                <td><i class="fab fa-itunes-note dangphat"></i></td>
                                 <td scope="row" class="thutubaihat">8</td>
                                 <td class="baihatalbum" onclick="Playnhac(7)">Radio</td>
                                 <td class="nghesialbum">Lana Del Rey</td>
                             </tr>
                             <tr>
+                                <td><i class="fab fa-itunes-note dangphat"></i></td>
                                 <td scope="row" class="thutubaihat">9</td>
                                 <td class="baihatalbum" onclick="Playnhac(8)">Carmen</td>
                                 <td class="nghesialbum">Lana Del Rey</td>
                             </tr>
                             <tr>
+                                <td><i class="fab fa-itunes-note dangphat"></i></td>
                                 <td scope="row" class="thutubaihat">10</td>
                                 <td class="baihatalbum" onclick="Playnhac(9)">Million Dollar Man</td>
                                 <td class="nghesialbum">Lana Del Rey</td>
                             </tr>
                             <tr>
+                                <td><i class="fab fa-itunes-note dangphat"></i></td>
                                 <td scope="row" class="thutubaihat">11</td>
                                 <td class="baihatalbum" onclick="Playnhac(10)">Summertime Sadness</td>
                                 <td class="nghesialbum">Lana Del Rey</td>
                             </tr>
                             <tr>
+                                <td><i class="fab fa-itunes-note dangphat"></i></td>
                                 <td scope="row" class="thutubaihat">12</td>
                                 <td class="baihatalbum" onclick="Playnhac(11)">This Is What Makes Us Girls</td>
                                 <td class="nghesialbum">Lana Del Rey</td>
@@ -215,7 +233,7 @@
                 <div class="row hothot">
                     <div class="col">
                         <div class="card mx-auto">
-                            <a href="btd.html" class="imglink">
+                            <a href="#" class="imglink">
                                 <img class="card-img-top anhanh" src="image/album/11.png" alt="444">
                                 <img src="play.svg" alt="1233" class="hoverplay animated zoomOut">
                             </a>
@@ -230,7 +248,7 @@
                     </div>
                     <div class="col">
                             <div class="card mx-auto">
-                                <a href="btd.html" class="imglink">
+                                <a href="#" class="imglink">
                                     <img class="card-img-top anhanh" src="image/album/14.jpg" alt="444">
                                     <img src="play.svg" alt="1233" class="hoverplay animated zoomOut">
                                 </a>
@@ -245,7 +263,7 @@
                     </div>
                     <div class="col">
                             <div class="card mx-auto">
-                                <a href="btd.html" class="imglink">
+                                <a href="#" class="imglink">
                                     <img class="card-img-top anhanh" src="image/album/10.png" alt="444">
                                     <img src="play.svg" alt="1233" class="hoverplay animated zoomOut">
                                 </a>
@@ -260,7 +278,7 @@
                     </div>
                     <div class="col">
                             <div class="card mx-auto">
-                                <a href="btd.html" class="imglink">
+                                <a href="#" class="imglink">
                                     <img class="card-img-top anhanh" src="image/album/15.jpg" alt="444">
                                     <img src="play.svg" alt="1233" class="hoverplay animated zoomOut">
                                 </a>
@@ -278,7 +296,7 @@
                 <h4>VIDEOS LIÊN QUAN</h4>
                 <div class="row hothot">
                     <div class="col">
-                        <div class="card">
+                        <div class="card mx-auto">
                             <img class="card-img-top" src="image/videos/1.png" alt="444">
                             <div class="card-body" style="padding: 0px;">
                                 <div class="list-group list-group-flush">
@@ -290,7 +308,7 @@
                         </div>
                     </div>
                     <div class="col">
-                            <div class="card">
+                            <div class="card mx-auto">
                                     <img class="card-img-top" src="image/videos/1.png" alt="444">
                                     <div class="card-body" style="padding: 0px;">
                                         <div class="list-group list-group-flush">
@@ -302,7 +320,7 @@
                                 </div>
                     </div>
                     <div class="col">
-                            <div class="card">
+                            <div class="card mx-auto">
                                     <img class="card-img-top" src="image/videos/1.png" alt="444">
                                     <div class="card-body" style="padding: 0px;">
                                         <div class="list-group list-group-flush">
@@ -314,7 +332,7 @@
                                 </div>
                     </div>
                     <div class="col">
-                            <div class="card">
+                            <div class="card mx-auto">
                                     <img class="card-img-top" src="image/videos/1.png" alt="444">
                                     <div class="card-body" style="padding: 0px;">
                                         <div class="list-group list-group-flush">
