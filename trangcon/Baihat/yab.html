@@ -4,15 +4,16 @@
     <title>Young and Beautiful - Lana Del Rey</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="animate.min.css">
-    <link rel="stylesheet" href="bootstrap-4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/animate.min.css">
+    <link rel="stylesheet" href="../../bootstrap-4.1.0/css/bootstrap.min.css">
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../audioplayer/audioplayer.css">
   </head>
-  <body>
+  <body onresize="cdef()" onload="getduration()" >
     <nav class="navbar navbar-expand-md navbar-dark fixed-top justify-content-center" style="background-color: #398791;">
         <div class="container">
-            <a class="navbar-brand" href="index.html" id="home">NHACMP3</a>
+            <a class="navbar-brand" href="../../index.html" id="home">NHACMP3</a>
             <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
                 aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -78,14 +79,47 @@
                         <p class="card-text">Lana Del Rey</p>
                     </div>
                     <div class="card-footer">
-                        <audio src="musicdata/1.mp3" controls controlslist="nodownload" style="width: 100%;"></audio>
+                        <audio id="audioaudio" src="../../musicdata/1.mp3" style="width: 100%;"></audio>
+                        <div class="myaudioplayer" id="myaudioplayer1">
+                            <ul class="list-inline">
+                                <li class="list-inline-item" style="float: left;">
+                                    <!-- <input type="button" value="Play" id="btnPlay" onclick="PlayNow()"> -->
+                                    <button class="playplay" id="btnPlay" onclick="PlayNow()" value=""></button>
+                                </li>
+                                <li class="list-inline-item" style="float: left;">
+                                    <label style="margin-right: 5px;" id="lblTime">00:00</label>
+                                </li>
+                                <li class="list-inline-item my-auto">
+                                    <input type="range" step="any" id="seekbar"
+                        onchange="ChangeTheTime()" style="margin-top: 6px;" value="0">
+                                </li>
+                                <li class="list-inline-item" style="float: right;width: 80px;">
+                                        <input type="range" min="0" max="1" step="0.1" id="volume"
+                        onchange="ChangeVolume()" style="margin-top: 6px;">
+                                </li>
+                                <li class="list-inline-item" style="float: right;">
+                                    <label style="margin-right: 5px;" id="endtime">00:00</label>
+                                </li>
+                                
+                            </ul>
+                        </div>
                     </div>
                 </div>
-
+                <script>
+                    var a = document.getElementById("myaudioplayer1").offsetWidth;
+                    var d = document.getElementById("btnPlay").offsetWidth;
+                    var e = document.getElementById("lblTime").offsetWidth;
+                    var f = document.getElementById("volume").offsetWidth;
+                    var g = document.getElementById("endtime").offsetWidth;
+                    var xx = a - d - e - f - g -25;
+                    var xy = xx +'px';
+                    // alert(a);
+                    document.getElementById("seekbar").style.width = xy;
+                </script>
                 <div class="card khungthongtin">
                     <div class="row">
                         <div class="col-auto my-auto">
-                            <img src="image/album/12.jpg" alt="123" class="imginfo">
+                            <img src="../../image/album/12.jpg" alt="123" class="imginfo">
                         </div>
                         <div class="col my-auto tttest">
                             <div class="card-body">
@@ -150,9 +184,9 @@
                 <div class="row hothot">
                     <div class="col"> 
                         <div class="card mx-auto">
-                            <a href="btd.html" class="imglink">
-                                <img class="card-img-top anhanh" src="image/album/5.jpg" alt="444">
-                                <img src="play.svg" alt="1233" class="hoverplay animated zoomOut">
+                            <a href="../Album/btd.html" class="imglink">
+                                <img class="card-img-top anhanh" src="../../image/album/5.jpg" alt="444">
+                                <img src="../../image/svg/play.svg" alt="1233" class="hoverplay animated zoomOut">
                             </a>
                         <div class="card-body" style="padding: 0px;">
                             <div class="list-group list-group-flush">
@@ -166,8 +200,8 @@
                 <div class="col">
                         <div class="card mx-auto">
                             <a href="#" class="imglink">
-                                <img class="card-img-top anhanh" src="image/album/17.jpg" alt="444">
-                                <img src="play.svg" alt="1233" class="hoverplay animated zoomOut">
+                                <img class="card-img-top anhanh" src="../../image/album/17.jpg" alt="444">
+                                <img src="../../image/svg/play.svg" alt="1233" class="hoverplay animated zoomOut">
                             </a>
                                 <div class="card-body" style="padding: 0px;">
                                     <div class="list-group list-group-flush">
@@ -181,8 +215,8 @@
                 <div class="col">
                         <div class="card mx-auto">
                             <a href="#" class="imglink">
-                                <img class="card-img-top anhanh" src="image/album/1.jpg" alt="444">
-                                <img src="play.svg" alt="1233" class="hoverplay animated zoomOut">
+                                <img class="card-img-top anhanh" src="../../image/album/1.jpg" alt="444">
+                                <img src="../../image/svg/play.svg" alt="1233" class="hoverplay animated zoomOut">
                             </a>
                                 <div class="card-body" style="padding: 0px;">
                                     <div class="list-group list-group-flush">
@@ -196,8 +230,8 @@
                 <div class="col">
                         <div class="card mx-auto" >
                             <a href="#" class="imglink">
-                                <img class="card-img-top anhanh" src="image/album/2.jpg" alt="444">
-                                <img src="play.svg" alt="1233" class="hoverplay animated zoomOut">
+                                <img class="card-img-top anhanh" src="../../image/album/2.jpg" alt="444">
+                                <img src="../../image/svg/play.svg" alt="1233" class="hoverplay animated zoomOut">
                             </a>
                                 <div class="card-body" style="padding: 0px;">
                                     <div class="list-group list-group-flush">
@@ -214,7 +248,7 @@
                 <div class="row hothot">
                     <div class="col">
                         <div class="card mx-auto">
-                            <img class="card-img-top" src="image/videos/1.png" alt="444">
+                            <img class="card-img-top" src="../../image/videos/1.png" alt="444">
                             <div class="card-body" style="padding: 0px;">
                                 <div class="list-group list-group-flush">
                                     <a href="#" class="list-group-item list-group-item-action" style="text-align: center">
@@ -226,7 +260,7 @@
                     </div>
                     <div class="col">
                             <div class="card mx-auto">
-                                    <img class="card-img-top" src="image/videos/1.png" alt="444">
+                                    <img class="card-img-top" src="../../image/videos/1.png" alt="444">
                                     <div class="card-body" style="padding: 0px;">
                                         <div class="list-group list-group-flush">
                                             <a href="#" class="list-group-item list-group-item-action" style="text-align: center">
@@ -238,7 +272,7 @@
                     </div>
                     <div class="col">
                             <div class="card mx-auto">
-                                    <img class="card-img-top" src="image/videos/1.png" alt="444">
+                                    <img class="card-img-top" src="../../image/videos/1.png" alt="444">
                                     <div class="card-body" style="padding: 0px;">
                                         <div class="list-group list-group-flush">
                                             <a href="#" class="list-group-item list-group-item-action" style="text-align: center">
@@ -250,7 +284,7 @@
                     </div>
                     <div class="col">
                             <div class="card mx-auto">
-                                    <img class="card-img-top" src="image/videos/1.png" alt="444">
+                                    <img class="card-img-top" src="../../image/videos/1.png" alt="444">
                                     <div class="card-body" style="padding: 0px;">
                                         <div class="list-group list-group-flush">
                                             <a href="#" class="list-group-item list-group-item-action" style="text-align: center">
@@ -415,7 +449,8 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/popper.js@1.14.3/dist/umd/popper.js"></script>
-    <script src="bootstrap-4.1.0/js/bootstrap.min.js"></script>
-    <script src="js.js"></script>
+    <script src="../../bootstrap-4.1.0/js/bootstrap.min.js"></script>
+    <script src="../../js/js.js"></script>
+    <script src="../../audioplayer/audioplayer.js"></script>
   </body>
 </html>

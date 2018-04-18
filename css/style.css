@@ -287,6 +287,7 @@ h4.card-title {
 }
 .hothot .imglink {
     background-color: #000000;
+    border-radius: 4px;
 }
 .hothot a:hover .hoverplay {
     opacity: 1!important;
@@ -306,4 +307,62 @@ h4.card-title {
 .dangphat {
     opacity: 0;
     animation: spin 1700ms linear infinite;
+}
+
+/* audio player */
+.myaudioplayer {
+    padding-right: 10px;
+    display: block;
+    /* background-color: #164954; */
+    height: 32px;
+    width: 100%;
+}
+.myaudioplayer .list-inline-item {
+    margin-left: 0!important;
+    margin-right: 0!important;
+}
+.playpause {
+    width: 20px;
+    height: 30px;
+}
+#btnPlay {
+    height: 30px;
+    width: 30px;
+    background-position: center;
+    border: none;
+    outline: 0px;
+    cursor: pointer;
+}
+.playplay {
+
+    margin-left: 3px;
+    background-size: 55% 55%!important;
+    background: url(../image/svg/play-arrow.svg) no-repeat;
+}
+.pause {
+    margin-left: 3px;
+    background-size: 55% 55%!important;
+    background: url(../image/svg/pause-button.svg) no-repeat;
+}
+#lblTime,#endtime{
+    margin-top: 5px;
+    font-size: smaller;
+    color: #164954;
+}
+#btnpn {
+    height: 30px;
+    width: 30px;
+    background-position: center;
+    background-size: 70% 70%;
+    border: none;
+    outline: 0px;
+    cursor: pointer;
+}
+.prev {
+    background-size: 50% 50% !important;
+    background: url(../image/svg/previous-track.svg) no-repeat;
+}
+.next {
+    background-size: 50% 50% !important;
+    background: url(../image/svg/play-next-button.svg) no-repeat;
 }
