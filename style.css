@@ -252,3 +252,34 @@ h4.card-title {
     background-color: #a2c2bd!important;
     cursor: pointer;
 }
+
+/* hover play */
+.hoverplay {
+    /* display: none; */
+    /* opacity: 0; */
+    position: absolute;
+    width: 50px !important;
+    left: 34%;
+    top: 30%;
+    /* animation: fadeOut 0.5s; */
+    /* fill: #fafafa; */
+    /* filter: invert(200%); */
+}
+.card-header {
+    padding: 0!important;
+}
+
+.hothot .imglink:hover .anhanh {
+    opacity: 0.9;
+}
+.hothot .imglink {
+    background-color: #000000;
+}
+.hothot a:hover .hoverplay {
+    opacity: 1!important;
+    display: block;
+    animation: zoomIn 0.2s;
+}
+.anhanh {
+    opacity: 1;
+}
