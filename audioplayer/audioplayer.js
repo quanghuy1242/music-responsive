@@ -1,7 +1,8 @@
 // get the audio, volume and seekbar elements
 var audio = document.getElementById("audioaudio");
-var volumeRange = document.getElementById('volume');
+var volumeRange = document.getElementById("volume");
 var seekbar = document.getElementById('seekbar');
+var btnPlay = document.getElementById("btnPlay");
 
 window.onload = function () {
     // getduration();
@@ -9,9 +10,6 @@ window.onload = function () {
     audio.addEventListener('durationchange', SetSeekBar, false);
     volumeRange.value = audio.volume;
     // PlayNow();
-}
-window.onmouseover = function () {
-    // getduration();
 }
 
 
@@ -29,15 +27,7 @@ function getduration() {
 }
 
 // fires when volume element is changed
-function ChangeVolume() {
-    var myVol = volumeRange.value;
-    audio.volume = myVol;
-    if (myVol == 0) {
-        audio.muted = true;
-    } else {
-        audio.muted = false;
-    }
-}
+
 
 // fires when page loads, it sets the min and max range of the video
 function SetSeekBar() {
@@ -52,6 +42,7 @@ function ChangeTheTime() {
 
 function UpdateTheTime() {
     var sec = audio.currentTime;
+    var dodai = parseInt(audio.duration);
     var h = Math.floor(sec / 3600);
     sec = sec % 3600;
     var min = Math.floor(sec / 60);
@@ -66,17 +57,19 @@ function UpdateTheTime() {
     getduration();
 }
 
-var btnPlay = document.getElementById("btnPlay");
+
 // fires when Play button is clicked
 function PlayNow() { 
     // getduration();
     if (audio.paused) {
         audio.play();
         btnPlay.innerHTML = "<i class='material-icons'>pause</i>";
-    } else if (audio.ended) {
+    }
+    else if (audio.ended) {
         audio.currentTime = 0;
         audio.play();
-    } else if(audio.play) {
+    }
+    else if(audio.play) {
         audio.pause();
         btnPlay.innerHTML = "<i class='material-icons'>play_arrow</i>";
     }
@@ -87,15 +80,43 @@ function PauseNow() {
         audio.pause();
     }
 }
+var tempp = false;
+function ChangeVolume() {
+    var myVol = volumeRange.value;
+    document.getElementById("audioaudio").volume = myVol;
+    if (myVol == 0) {
+        document.getElementById("audioaudio").muted = true;
+        document.getElementById("volumev").innerHTML = "<i class='material-icons'>volume_mute</i>"
+    } else {
+        document.getElementById("audioaudio").muted = false;
+        document.getElementById("volumev").innerHTML = "<i class='material-icons'>volume_down</i>"
+    }
+
+    if(document.getElementById("audioaudio").volume == 0) {
+        tempp = true;
+    }
+
+}
+
 // fires when Mute button is clicked
+
 function MuteNow() {
     if (audio.muted) {
-        audio.muted = false;
-        volumeRange.value = audio.volume;
+        if (tempp == true) {
+            // audio.muted = true;
+            audio.volume = 1;
+        }
+        {
+            audio.muted = false;
+            volumeRange.value = audio.volume;
+            document.getElementById("volumev").innerHTML = "<i class='material-icons'>volume_down</i>"
+        }
+        tempp = false;
     }
     else {
         audio.muted = true;
         volumeRange.value = 0;
+        document.getElementById("volumev").innerHTML = "<i class='material-icons'>volume_mute</i>"
     }
 }
 

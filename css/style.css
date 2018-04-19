@@ -42,9 +42,6 @@
 .hothot {
     padding: 15px;
 }
-.hothot .col {
-    /* margin: 0px 10px 0px 10px; */
-}
 .nav-pills a.nav-link{
     color: black;
     border-radius: 0px;
@@ -318,7 +315,7 @@ h4.card-title {
 }
 .myaudioplayer label {
     margin-bottom: 0px!important;
-    color: #164954;
+    color: #505050;
 }
 .myaudioplayer .list-inline-item {
     margin-left: 0!important;
@@ -364,6 +361,7 @@ h4.card-title {
 }
 #lblTime,#endtime {
     cursor: pointer;
+
 }
 .myaudioplayer .btn {
     box-shadow: none!important;

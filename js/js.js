@@ -11,12 +11,5 @@ $(function () {
             return $(title).children(".popover-heading").html();
         }
     });
-    // alert("212");
     $('[data-toggle="tooltip"]').tooltip();
-    // PlayNow();
-    document.getElementById("defaultplay").click();
-    btnPlay.innerHTML = "<i class='material-icons'>play_arrow</i>";
-    // getduration();
-    // alert(document.getElementById("endtime").innerHTML);
-    document.getElementById("audioaudio").pause();
 });
