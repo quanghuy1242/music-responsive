@@ -93,15 +93,15 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="row" style="padding-top: 0px;padding-bottom: 0px;border-top: none">
+                                            <td class="row" style="padding-top: 0px;padding-bottom: 0px;border-top: none;width: 100%;">
                                                 <div class="btn-group btn-group-sm mx-auto">
                                                     <button class="btn btn-light prev" id="btnpn" onclick="prev()"></button>
                                                     <button class="btn btn-light playplay" id="btnPlay" onclick="PlayNow()"></button>
                                                     <button class="btn btn-light next" id="btnpn" onclick="next()"></button>
-                                                    <button class="btn btn-light" id="lblTime">
+                                                    <button class="btn btn-light" id="BlblTime">
                                                             <label id="lblTime">00:00</label>
                                                     </button>
-                                                    <button class="btn btn-light">
+                                                    <button class="btn btn-light" id="Bendtime">
                                                             <label id="endtime">00:00</label>
                                                     </button>
                                                     <button class="btn btn-light" id="volumev">
@@ -167,7 +167,7 @@
                         }
 
 						function prev(){
-
+                            var stt = document.getElementById("stt").innerHTML;
                             if( stt > 1 ){
                                 if (audio.play) {
                                     btnPlay.className = "";
@@ -177,10 +177,6 @@
                                     btnPlay.className = "";
                                     btnPlay.className = "btn btn-light playplay";
                                 }
-                                var stt = document.getElementById("stt").innerHTML;
-                                
-
-
                                 document.getElementById("namesong").innerHTML=tenbh[stt-2].innerHTML;
                                 document.getElementById("nameart").innerHTML=tencs[stt-2].innerHTML;
                                 document.getElementById("audioaudio").src = nhacs[stt-2];
@@ -194,7 +190,8 @@
                             }
 						}
 						function next(){
-
+                            var stt = document.getElementById("stt").innerHTML;
+                            // alert(tenbh.length>stt);
                             if(stt < tenbh.length) {
                                 if (audio.play) {
                                 btnPlay.className = "";
@@ -204,7 +201,6 @@
                                 btnPlay.className = "";
                                 btnPlay.className = "btn btn-light playplay";
                             }
-                            var stt = document.getElementById("stt").innerHTML;
                             document.getElementById("namesong").innerHTML=tenbh[stt].innerHTML;
                             document.getElementById("nameart").innerHTML=tencs[stt].innerHTML;
                             document.getElementById("audioaudio").src = nhacs[stt];
