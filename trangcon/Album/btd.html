@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="../../css/animate.min.css">
     <link rel="stylesheet" href="../../bootstrap-4.1.0/css/bootstrap.min.css">
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
     <script src="../../js/jquery-3.3.1.min.js"></script>
     <link rel="stylesheet" href="../../audioplayer/audioplayer.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -84,7 +83,7 @@
                     <div class="card-footer" id="player">
                         <div style="width: 100%;">
                             <div>
-                                <audio id="audioaudio" controls onended="next()" style="width: 100%;"></audio>
+                                <audio id="audioaudio" onended="next()" style="width: 100%;"></audio>
                                 <div class="myaudioplayer" id="myaudioplayer1">
 
                                     <table class="table table-sm" style="margin-bottom: 10px;">
@@ -141,90 +140,6 @@
                         </div>
                     </div>
                 </div>
-                <script>
-                    //https://drive.google.com/uc?export=download&id=1XhyXIlvfN1yY7t8PSjGHsmDhVHIf5auq
-                    //https://drive.google.com/uc?export=download&id=1nMbLBDGutvZj13qe9xY1Y0ZkALNtB1LW
-						var tenbh = document.getElementsByClassName("baihatalbum");
-						var tencs = document.getElementsByClassName("nghesialbum");
-                        var dangphat = document.getElementsByClassName("dangphat");
-                        var btnPlay = document.getElementById("btnPlay");
-                        var audio = new Audio();
-                        // PlayNow();
-                        var nhacs = ["../../musicdata/BornToDie.mp3","../../musicdata/BornToDie.mp3","../../musicdata/BornToDie.mp3","../../musicdata/BornToDie.mp3","../../musicdata/BornToDie.mp3","../../musicdata/BornToDie.mp3","../../musicdata/BornToDie.mp3","../../musicdata/BornToDie.mp3","../../musicdata/BornToDie.mp3","../../musicdata/BornToDie.mp3","../../musicdata/BornToDie.mp3","../../musicdata/BornToDie.mp3"];
-                        
-						function Playnhac(i){
-                            
-							document.getElementById("namesong").innerHTML=tenbh[i].innerHTML;
-							document.getElementById("nameart").innerHTML=tencs[i].innerHTML;
-							document.getElementById("audioaudio").src = nhacs[i];
-                            document.getElementById("audioaudio").play();
-                            document.getElementById("stt").innerHTML = i+1;
-                            
-                            
-
-                            for(var x = 0;x < dangphat.length ; x++){
-                                dangphat[x].style.opacity = "0";
-                            }
-                            dangphat[i].style.opacity = "1";
-
-                            if (audio.play) {
-                                btnPlay.innerHTML = "<i class='material-icons'>pause</i>";
-                            } else {
-                                audio.pause();
-                                btnPlay.innerHTML = "<i class='material-icons'>play_arrow</i>";
-                            }
-                            
-                        }
-
-						function prev(){
-                            var stt = document.getElementById("stt").innerHTML;
-                            if( stt > 1 ){
-                                if (audio.play) {
-                                    btnPlay.innerHTML = "<i class='material-icons'>pause</i>";
-                                } else {
-                                    // audio.pause();
-                                    btnPlay.innerHTML = "<i class='material-icons'>play_arrow</i>";
-                                }
-                                document.getElementById("namesong").innerHTML=tenbh[stt-2].innerHTML;
-                                document.getElementById("nameart").innerHTML=tencs[stt-2].innerHTML;
-                                document.getElementById("audioaudio").src = nhacs[stt-2];
-                                document.getElementById("audioaudio").autoplay="autoplay";
-                                document.getElementById("stt").innerHTML = stt-1;
-                                getduration();
-                                for(var x = 0;x < dangphat.length ; x++){
-                                    dangphat[x].style.opacity = "0";
-                                }
-                                dangphat[stt-2].style.opacity = "1";
-                            }
-						}
-						function next(){
-                            var stt = document.getElementById("stt").innerHTML;
-                            // alert(tenbh.length>stt);
-                            if(stt < tenbh.length) {
-                                if (audio.play) {
-                                btnPlay.innerHTML = "<i class='material-icons'>pause</i>";
-                            } else {
-                                // audio.pause();
-                                btnPlay.innerHTML = "<i class='material-icons'>play_arrow</i>";
-                            }
-                            document.getElementById("namesong").innerHTML=tenbh[stt].innerHTML;
-                            document.getElementById("nameart").innerHTML=tencs[stt].innerHTML;
-                            document.getElementById("audioaudio").src = nhacs[stt];
-                            document.getElementById("audioaudio").autoplay="autoplay";
-                            document.getElementById("stt").innerHTML = parseInt(stt)+1;
-                            getduration();
-                            for(var x = 0;x < dangphat.length ; x++){
-                                dangphat[x].style.opacity = "0";
-                            }
-                            dangphat[stt].style.opacity = "1";
-                        }
-
-                            // getduration();
-                            // alert()
-                            
-						}
-                    </script>
-                    
                 <div class="card listbaihat">
                     <div class="card-body">
                         <table class="table table-hover table-striped table-sm">
@@ -572,8 +487,8 @@
     </div>
     <script src="https://unpkg.com/popper.js@1.14.3/dist/umd/popper.js"></script>
     <script src="../../bootstrap-4.1.0/js/bootstrap.min.js"></script>
-    <script src="../../audioplayer/audioplayer.js"></script>
     <script src="../../js/js.js"></script>
+    <script src="../../audioplayer/audioplayer.js"></script>
     <script>
         function aaa() {
             alert("â");

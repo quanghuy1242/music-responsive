@@ -22,7 +22,6 @@ function getduration() {
     if (min.toString().length < 2) min = "0" + min;
     if (sec.toString() == "NaN") sec = "00";
     if (min.toString() == "NaN") min = "00";
-    // document.getElementById('lblTime').innerHTML = h + ":" + min + ":" + sec;
     document.getElementById('endtime').innerHTML = min + ":" + sec;
 }
 
@@ -43,13 +42,22 @@ function ChangeTheTime() {
 function UpdateTheTime() {
     var sec = audio.currentTime;
     var dodai = parseInt(audio.duration);
+
+    if (audio.paused) {
+        btnPlay.innerHTML = "<i class='material-icons'>play_arrow</i>";
+    }
+    else {
+        btnPlay.innerHTML = "<i class='material-icons'>pause</i>";
+    }
+
     var h = Math.floor(sec / 3600);
     sec = sec % 3600;
     var min = Math.floor(sec / 60);
     sec = Math.floor(sec % 60);
+
     if (sec.toString().length < 2) sec = "0" + sec;
     if (min.toString().length < 2) min = "0" + min;
-    // document.getElementById('lblTime').innerHTML = h + ":" + min + ":" + sec;
+
     document.getElementById('lblTime').innerHTML = min + ":" + sec;
     seekbar.min = audio.startTime;
     seekbar.max = audio.duration;
