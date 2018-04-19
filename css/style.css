@@ -310,9 +310,9 @@ h4.card-title {
 /* audio player */
 .myaudioplayer {
     /* padding-right: 10px; */
-    display: block;
+    /* display: block; */
     /* background-color: #164954; */
-    /* height: 32px; */
+    /* height: 65px; */
     width: 100%;
     margin-bottom: -10px!important;
 }
@@ -385,4 +385,9 @@ h4.card-title {
 .btn {
     box-shadow: none!important;
     cursor: pointer;
+    /* height: 36px; */
+    /* -moz- */
+}
+#volumev {
+    width: 100px;
 }
