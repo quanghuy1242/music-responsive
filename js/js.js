@@ -15,8 +15,7 @@ $(function () {
     $('[data-toggle="tooltip"]').tooltip();
     // PlayNow();
     document.getElementById("defaultplay").click();
-    btnPlay.className = "";
-    btnPlay.className = "btn btn-light playplay";
+    btnPlay.innerHTML = "<i class='material-icons'>play_arrow</i>";
     // getduration();
     // alert(document.getElementById("endtime").innerHTML);
     document.getElementById("audioaudio").pause();

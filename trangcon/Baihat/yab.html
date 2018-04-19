@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../../bootstrap-4.1.0/css/bootstrap.min.css">
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="../../audioplayer/audioplayer.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
   <body>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top justify-content-center" style="background-color: #398791;">
@@ -83,24 +84,25 @@
                         <div class="myaudioplayer" id="myaudioplayer1">
                             <table class="table table-sm" style="margin-bottom: 10px;">
                                 <tr>
-                                    <td colspan="2">
+                                    <td colspan="2" style="margin-bottom: 50px;">
                                         <input type="range" step="any" id="seekbar"
                                         onchange="ChangeTheTime()" style="margin-top: 6px;width: 100%;" value="0">
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="row" style="padding-top:0px;padding-bottom: 0px;border-top: none">
+                                    <td class="row" style="padding-bottom: 0px;border-top: none">
                                         <div class="btn-group btn-group-sm mx-auto">
-                                            <button class="btn btn-light playplay" id="btnPlay" onclick="PlayNow()"></button>
+                                            <button class="btn btn-light" id="btnPlay" onclick="PlayNow()">
+                                                <i class="material-icons">play_arrow</i>
+                                            </button>
                                             <button class="btn btn-light" id="BlblTime">
                                                     <label id="lblTime">00:00</label>
                                             </button>
                                             <button class="btn btn-light" id="Bendtime">
                                                     <label id="endtime">00:00</label>
                                             </button>
-                                            <button class="btn btn-light" id="volumev" onclick="MuteNow()">
-                                                    <input type="range" min="0" max="1" step="0.1" id="volume"
-                                                    onchange="ChangeVolume()" class="" style="margin-bottom: 10px;">
+                                            <button class="btn btn-light" id="volumev" data-toggle="popover" data-popover-content="#a1">
+                                                <i class="material-icons">volume_down</i>
                                             </button>
                                         </div>
                                     </td>
@@ -109,6 +111,13 @@
                         </div>
                     </div>
                 </div>
+
+                <div id="a1" style="display: none">
+                    <div class="popover-body">
+                        <input type="range" min="0" max="1" step="0.1" value="1" id="volume" onchange="ChangeVolume()" class="" style="margin-bottom: 10px;width: 100px;">
+                    </div>
+                </div>
+
                 <script>
                     var a = document.getElementById("myaudioplayer1").offsetWidth;
                     var d = document.getElementById("btnPlay").offsetWidth;

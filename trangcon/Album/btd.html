@@ -10,6 +10,7 @@
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../audioplayer/audioplayer.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
   <body>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top justify-content-center" style="background-color: #398791;">
@@ -93,20 +94,25 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="row" style="padding-top: 0px;padding-bottom: 0px;border-top: none;width: 100%;">
+                                            <td class="row" style="padding-bottom: 0px;border-top: none;width: 100%;">
                                                 <div class="btn-group btn-group-sm mx-auto">
-                                                    <button class="btn btn-light prev" id="btnpn" onclick="prev()"></button>
-                                                    <button class="btn btn-light playplay" id="btnPlay" onclick="PlayNow()"></button>
-                                                    <button class="btn btn-light next" id="btnpn" onclick="next()"></button>
+                                                    <button class="btn btn-light" id="btnpn" onclick="prev()">
+                                                        <i class="material-icons">skip_previous</i>
+                                                    </button>
+                                                    <button class="btn btn-light" id="btnPlay" onclick="PlayNow()">
+                                                        <i class="fas fa-play"></i>
+                                                    </button>
+                                                    <button class="btn btn-light" id="btnpn" onclick="next()">
+                                                        <i class="material-icons">skip_next</i>
+                                                    </button>
                                                     <button class="btn btn-light" id="BlblTime">
                                                             <label id="lblTime">00:00</label>
                                                     </button>
                                                     <button class="btn btn-light" id="Bendtime">
                                                             <label id="endtime">00:00</label>
                                                     </button>
-                                                    <button class="btn btn-light" id="volumev" onclick="MuteNow()">
-                                                            <input type="range" min="0" max="1" step="0.1" id="volume"
-                                                            onchange="ChangeVolume()" style="margin-bottom: 10px;">
+                                                    <button class="btn btn-light" id="volumev" data-toggle="popover" data-popover-content="#a1">
+                                                        <i class="material-icons">volume_down</i>
                                                     </button>
                                                 </div>
                                             </td>
@@ -115,6 +121,11 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div id="a1" style="display: none">
+                    <div class="popover-body">
+                        <input type="range" min="0" max="1" step="0.1" value="1" id="volume" onchange="ChangeVolume()" class="" style="margin-bottom: 10px;width: 100px;">
                     </div>
                 </div>
                 <div class="card khungthongtin">
@@ -156,12 +167,10 @@
                             }
                             dangphat[i].style.opacity = "1";
                             if (audio.play) {
-                                btnPlay.className = "";
-                                btnPlay.className = "btn btn-light pause";
+                                btnPlay.innerHTML = "<i class='material-icons'>pause</i>";
                             } else {
                                 audio.pause();
-                                btnPlay.className = "";
-                                btnPlay.className = "btn btn-light playplay";
+                                btnPlay.innerHTML = "<i class='material-icons'>play_arrow</i>";
                             }
                             
                         }
@@ -171,11 +180,10 @@
                             if( stt > 1 ){
                                 if (audio.play) {
                                     btnPlay.className = "";
-                                    btnPlay.className = "btn btn-light pause";
+                                    btnPlay.innerHTML = "<i class='material-icons'>pause</i>";
                                 } else {
                                     audio.pause();
-                                    btnPlay.className = "";
-                                    btnPlay.className = "btn btn-light playplay";
+                                    btnPlay.innerHTML = "<i class='material-icons'>play_arrow</i>";
                                 }
                                 document.getElementById("namesong").innerHTML=tenbh[stt-2].innerHTML;
                                 document.getElementById("nameart").innerHTML=tencs[stt-2].innerHTML;
@@ -194,12 +202,10 @@
                             // alert(tenbh.length>stt);
                             if(stt < tenbh.length) {
                                 if (audio.play) {
-                                btnPlay.className = "";
-                                btnPlay.className = "btn btn-light pause";
+                                btnPlay.innerHTML = "<i class='material-icons'>pause</i>";
                             } else {
                                 audio.pause();
-                                btnPlay.className = "";
-                                btnPlay.className = "btn btn-light playplay";
+                                btnPlay.innerHTML = "<i class='material-icons'>play_arrow</i>";
                             }
                             document.getElementById("namesong").innerHTML=tenbh[stt].innerHTML;
                             document.getElementById("nameart").innerHTML=tencs[stt].innerHTML;
