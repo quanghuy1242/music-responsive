@@ -344,7 +344,7 @@ h4.card-title {
     outline: 0px;
     cursor: pointer;
     background-size: 70% 70%;
-    box-shadow: none !important;
+    /* box-shadow: none !important; */
     
 }
 .playplay {
@@ -365,7 +365,7 @@ h4.card-title {
     background-size: 50% 50%;
     /* border: none; */
     /* outline: 0px; */
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 .prev {
     /* background-size: 50% 50% !important; */
@@ -376,9 +376,13 @@ h4.card-title {
     background: url(../image/svg/play-next-button.svg) no-repeat;
 }
 #BlblTime,#Bendtime {
-    cursor: pointer;
+    /* cursor: pointer; */
     box-shadow: none!important;
 }
 #lblTime,#endtime {
+    cursor: pointer;
+}
+.btn {
+    box-shadow: none!important;
     cursor: pointer;
 }
