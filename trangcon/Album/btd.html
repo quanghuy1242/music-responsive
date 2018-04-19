@@ -100,7 +100,7 @@
                                                         <i class="material-icons">skip_previous</i>
                                                     </button>
                                                     <button class="btn btn-light" id="btnPlay" onclick="PlayNow()">
-                                                        <i class="fas fa-play"></i>
+                                                            <i class="material-icons">play_arrow</i>
                                                     </button>
                                                     <button class="btn btn-light" id="btnpn" onclick="next()">
                                                         <i class="material-icons">skip_next</i>
@@ -179,7 +179,6 @@
                             var stt = document.getElementById("stt").innerHTML;
                             if( stt > 1 ){
                                 if (audio.play) {
-                                    btnPlay.className = "";
                                     btnPlay.innerHTML = "<i class='material-icons'>pause</i>";
                                 } else {
                                     audio.pause();
