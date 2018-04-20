@@ -45,7 +45,7 @@ function UpdateTheTime() {
 
     if (audio.paused) {
         btnPlay.innerHTML = "<i class='material-icons'>play_arrow</i>";
-    }
+    } 
     else {
         btnPlay.innerHTML = "<i class='material-icons'>pause</i>";
     }

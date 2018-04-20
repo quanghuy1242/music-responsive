@@ -12,23 +12,23 @@ $(function () {
         }
     });
     $('[data-toggle="tooltip"]').tooltip();
+
+    document.getElementById("defaultplay").click();
+    document.getElementById("audioaudio").pause();
+    btnPlay.innerHTML = "<i class='material-icons'>play_arrow</i>";
 });
 
-
-//https://drive.google.com/uc?export=download&id=1XhyXIlvfN1yY7t8PSjGHsmDhVHIf5auq
-//https://drive.google.com/uc?export=download&id=1nMbLBDGutvZj13qe9xY1Y0ZkALNtB1LW
 var tenbh = document.getElementsByClassName("baihatalbum");
 var tencs = document.getElementsByClassName("nghesialbum");
 var dangphat = document.getElementsByClassName("dangphat");
 var btnPlay = document.getElementById("btnPlay");
-var nhacs = ["../../musicdata/BornToDie.mp3", "../../musicdata/BornToDie.mp3", "../../musicdata/BornToDie.mp3", "../../musicdata/BornToDie.mp3", "../../musicdata/BornToDie.mp3", "../../musicdata/BornToDie.mp3", "../../musicdata/BornToDie.mp3", "../../musicdata/BornToDie.mp3", "../../musicdata/BornToDie.mp3", "../../musicdata/BornToDie.mp3", "../../musicdata/BornToDie.mp3", "../../musicdata/BornToDie.mp3","../../musicdata/BornToDie.mp3","../../musicdata/BornToDie.mp3","../../musicdata/BornToDie.mp3","../../musicdata/BornToDie.mp3"];
 
 function Playnhac(i) {
     var stt = document.getElementById("stt").innerHTML;
     document.getElementById("namesong").innerHTML = tenbh[i].innerHTML;
     document.getElementById("nameart").innerHTML = tencs[i].innerHTML;
     document.getElementById("audioaudio").src = nhacs[i];
-    document.getElementById("audioaudio").play();
+    document.getElementById("audioaudio").autoplay = "autoplay";
     document.getElementById("stt").innerHTML = i + 1;
 
     for (var x = 0; x < dangphat.length; x++) {
@@ -39,7 +39,6 @@ function Playnhac(i) {
     if (audio.play) {
         btnPlay.innerHTML = "<i class='material-icons'>pause</i>";
     } else {
-        audio.pause();
         btnPlay.innerHTML = "<i class='material-icons'>play_arrow</i>";
     }
 
@@ -89,3 +88,4 @@ function next() {
         dangphat[stt].style.opacity = "1";
     }
 }
+
