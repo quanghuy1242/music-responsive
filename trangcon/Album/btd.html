@@ -11,6 +11,12 @@
     <script src="../../js/jquery-3.3.1.min.js"></script>
     <link rel="stylesheet" href="../../audioplayer/audioplayer.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script type="text/javascript">
+        var is_chrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
+        if(is_chrome){
+        document.write('<link rel="stylesheet" href="../../css/chrome.css" type="text/css" />');
+        }
+    </script>
   </head>
   <body>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top justify-content-center" style="background-color: #398791;">
@@ -86,7 +92,7 @@
                                 <audio id="audioaudio" onended="next()" style="width: 100%;"></audio>
                                 <div class="myaudioplayer" id="myaudioplayer1">
 
-                                    <table class="table table-sm" style="margin-bottom: 10px;">
+                                    <table class="table table-sm">
                                         <tr>
                                             <td colspan="2">
                                                 <input type="range" step="any" id="seekbar"
@@ -94,7 +100,7 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="row" style="padding-bottom: 0px;border-top: none;width: 100%;">
+                                            <td class="row" style="padding-bottom: 0px;border-top: none;width: 100%;margin-top: -9px;">
                                                 <div class="btn-group btn-group-sm mx-auto">
                                                     <button class="btn btn-link" id="btnpn" onclick="prev()">
                                                         <i class="material-icons">skip_previous</i>
@@ -114,9 +120,9 @@
                                                     <button class="btn btn-link" id="volumev" onclick="MuteNow()">
                                                         <i class="material-icons">volume_down</i>
                                                     </button>
-                                                    <button class="btn btn-link" id="volumea">
-                                                        <input type="range" min="0" max="1" step="0.1" value="1" id="volume" onchange="ChangeVolume()" style="margin-bottom: 10px;width: 50px;">
-                                                    </button>
+                                                    <div class="btn btn-link" id="volumea">
+                                                        <input type="range" min="0" max="1" step="0.1" value="1" id="volume" onchange="ChangeVolume()" style="margin-bottom: 10px;width: 50px;margin-top: 10px;">
+                                                    </div>
                                                 </div>
                                             </td>
                                         </tr>

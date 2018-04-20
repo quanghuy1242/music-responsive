@@ -1,0 +1,15 @@
+.myaudioplayer .row {
+    margin-top: 0px !important;
+}
+/* chrome */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    #volume {
+        margin-top: 16px !important;
+    }
+}
+/* edge */
+@supports (-ms-ime-align:auto) and (not (-ms-accelerator:true)) {
+    #volume {
+        margin-top: 11px !important;
+    }
+}
