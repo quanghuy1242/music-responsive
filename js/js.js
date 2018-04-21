@@ -167,7 +167,7 @@ function next() {
                 messages: {
                     tendangki: "Tên đăng kí không được để trống.",
                     email: {
-                        email: "Email phải có định dạng abc@mail.xyz",
+                        email: "Email phải có định dạng abc@mail.xyz.",
                         required: "Email không được để trống.",
                     },
                     matkhaudk: {
@@ -175,7 +175,7 @@ function next() {
                         min: "Mật khẩu tối thiểu 8 kí tự."
                     },
                     rematkhaudk: {
-                        equalTo: "#mk",
+                        equalTo: "Mật khẩu không khớp.",
                         required: "Mật khẩu không để trống.",
                     },
                     ngay: {
