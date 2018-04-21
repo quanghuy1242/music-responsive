@@ -13,9 +13,20 @@ $(function () {
     });
     $('[data-toggle="tooltip"]').tooltip();
 
+    //animate
+    $('.dropdown').on('show.bs.dropdown', function (e) {
+        $(this).find('.dropdown-menu').first().stop(true, true).fadeIn();
+    });
+    $('.dropdown').on('hide.bs.dropdown', function (e) {
+        $(this).find('.dropdown-menu').first().stop(true, true).fadeOut();
+    });
+    
+
     document.getElementById("defaultplay").click();
     document.getElementById("audioaudio").pause();
     btnPlay.innerHTML = "<i class='material-icons'>play_arrow</i>";
+    
+
 });
 
 var tenbh = document.getElementsByClassName("baihatalbum");
@@ -59,7 +70,7 @@ function prev() {
         document.getElementById("audioaudio").src = nhacs[stt - 2];
         document.getElementById("audioaudio").autoplay = "autoplay";
         document.getElementById("stt").innerHTML = stt - 1;
-        
+
         for (var x = 0; x < dangphat.length; x++) {
             dangphat[x].style.opacity = "0";
         }
@@ -80,12 +91,117 @@ function next() {
         document.getElementById("nameart").innerHTML = tencs[stt].innerHTML;
         document.getElementById("audioaudio").src = nhacs[stt];
         document.getElementById("audioaudio").autoplay = "autoplay";
-        document.getElementById("stt").innerHTML = stt*1+1;
-        
+        document.getElementById("stt").innerHTML = stt * 1 + 1;
+
         for (var x = 0; x < dangphat.length; x++) {
             dangphat[x].style.opacity = "0";
         }
         dangphat[stt].style.opacity = "1";
     }
 }
+(function () {
+    'use strict';
+    window.addEventListener('load', function () {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function (form) {
+            form.addEventListener('submit', function (event) {
+                if (form.checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            }, false);
 
+            $("#dnn").validate({
+                // errorClass: 'aaa',
+                rules: {
+                    tendangnhap: "required",
+                    matkhau: "required",
+                },
+                messages: {
+                    tendangnhap: "Tên người dùng không để trống!",
+                    matkhau: "Mật khẩu không để trống!",
+                },
+                errorElement: "div",
+                success: function (label) {
+                    label
+                        .text('Thông tin hợp lệ!').addClass('valid')
+                        .closest('.form-element').addClass('success');
+                },
+            });
+
+            $("#dkk").validate({
+                // errorClass: 'aaa',
+                rules: {
+                    tendangki: "required",
+                    email: {
+                        email: true,
+                        required: true,
+                    },
+                    matkhaudk: {
+                        required: true,
+                        min: 8
+                    },
+                    rematkhaudk: {
+                        equalTo: "#mk",
+                        required: true,
+                    },
+                    ngay: {
+                        required: true,
+                        min: 1,
+                        max: 31
+                    },
+                    thang: {
+                        required: true,
+                        min: 1,
+                        max: 12
+                    },
+                    nam: {
+                        required: true,
+                        min: 1900,
+                        max: 2018
+                    }
+                },
+                messages: {
+                    tendangki: "Tên đăng kí không được để trống.",
+                    email: {
+                        email: "Email phải có định dạng abc@mail.xyz",
+                        required: "Email không được để trống.",
+                    },
+                    matkhaudk: {
+                        required: "Mật khẩu không để trống.",
+                        min: "Mật khẩu tối thiểu 8 kí tự."
+                    },
+                    rematkhaudk: {
+                        equalTo: "#mk",
+                        required: "Mật khẩu không để trống.",
+                    },
+                    ngay: {
+                        required: "Bắt buộc nhập",
+                        min: "Ngày phải nằm trong khoảng 1 - 31",
+                        max: "Ngày phải nằm trong khoảng 1 - 31"
+                    },
+                    thang: {
+                        required: "Bắt buộc nhập",
+                        min: "Ngày phải nằm trong khoảng 1 - 12",
+                        max: "Ngày phải nằm trong khoảng 1 - 12"
+                    },
+                    nam: {
+                        required: "Bắt buộc nhập",
+                        min: "Ngày phải nằm trong khoảng 1990 - 2018",
+                        max: "Ngày phải nằm trong khoảng 1990 - 2018"
+                    }
+                },
+                errorElement: "div",
+                success: function (label) {
+                    label
+                        .text('Thông tin hợp lệ!').addClass('valid')
+                        .closest('.form-element').addClass('success');
+                },
+            });
+
+        });
+    }, false);
+})();

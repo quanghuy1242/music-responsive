@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Barlow+Condensed');
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 * {
-    transition: 0.2s;
+    /* transition: 0.2s; */
 }
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, 
 address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, 
@@ -104,6 +104,9 @@ output, ruby, section, summary, time, mark, audio, video {
 }
 .dropdown-toggle::after {
     zoom: 80%;
+}
+.dropdown,.dropdown-menu {
+    transition: none !important;
 }
 /* tip */
 [class*="tips-"]::after {
@@ -407,3 +410,65 @@ h4.card-title {
     font-feature-settings: 'liga'!important;
 }
 
+/* dang nhap */
+.input-group-text {
+    /* width: 150px; */
+}
+div.error {
+    position: absolute;
+    background: rgba(220,53,69,.8);
+    color: white;
+    top: 100%;
+    z-index: 5;
+    max-width: 100%;
+    margin-top: 0.1rem;
+    border-radius: 0.2rem;
+    padding: 0.5rem;
+    font-size: .875rem;
+    /* margin-left: 50px; */
+    right: 3%;
+  }
+input.error {
+    border: 1px solid rgba(220,53,69,.8)!important;
+    background-color: white!important;
+}
+div.valid {
+    position: absolute;
+    background: rgba(40,167,69,.8);
+    color: white;
+    top: 100%;
+    z-index: 5;
+    max-width: 100%;
+    margin-top: 0.1rem;
+    border-radius: 0.2rem;
+    padding: 0.5rem;
+    font-size: .875rem;
+}
+.custom-checkbox .custom-control-input:checked~.custom-control-label::after {
+    background-color: #398791;
+    border-radius: 5px;
+}
+.custom-radio .custom-control-input:checked~.custom-control-label::after {
+    background-color: #398791;
+    border-radius: 50%;
+}
+#dnn input:focus {
+    border-color: rgba(57, 135, 145,0.8);
+    box-shadow: 0px 0px 0px 4px rgba(57, 135, 145, 0.356);
+    /* outline: 0 none; */
+}
+#dnn input,button {
+    border-radius: 0px!important;
+}
+.lmk {
+    color: black!important;
+}
+
+#dkk input:focus {
+    border-color: rgba(57, 135, 145,0.8);
+    box-shadow: 0px 0px 0px 4px rgba(57, 135, 145, 0.356);
+    /* outline: 0 none; */
+}
+#dkk input,button {
+    border-radius: 0px!important;
+}
