@@ -15,10 +15,10 @@ $(function () {
 
     //animate
     $('.dropdown').on('show.bs.dropdown', function (e) {
-        $(this).find('.dropdown-menu').first().stop(true, true).fadeIn();
+        $(this).find('.dropdown-menu').first().stop(true, true).fadeIn(200);
     });
     $('.dropdown').on('hide.bs.dropdown', function (e) {
-        $(this).find('.dropdown-menu').first().stop(true, true).fadeOut();
+        $(this).find('.dropdown-menu').first().stop(true, true).fadeOut(200);
     });
     
 

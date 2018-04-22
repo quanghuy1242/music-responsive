@@ -116,28 +116,30 @@ output, ruby, section, summary, time, mark, audio, video {
     width: 10px;
     height: 10px;
     /* border: 1px solid rgba(0,0,0,.15); */
-    border-right: none;
-    border-bottom: none;
+    border-top: 1px solid rgba(0,0,0,.15);
+    border-left: 1px solid rgba(0,0,0,.15);
+    /* padding: 1px; */
+    background-clip: padding-box; /* cho border ra ngoài */
 }
 .tips-bxh:after {
     transform: rotate(45deg);
-    top: -5px;
+    top: -5.9px;
     left: 20px;
 }
 .tips-cd:after {
     transform: rotate(45deg);
-    top: -5px;
+    top: -5.9px;
     left: 27px;
 }
 .tips-dn:after {
     transform: rotate(45deg);
-    top: -5px;
+    top: -5.9px;
     left: 129px;
 }
 @media screen and (max-width: 767px) {
     [class*="tips-"]::after {
         transform: rotate(45deg);
-        top: 38px;
+        top: 37.2px;
         left: 13px;
     }
     .imginfo {
@@ -471,4 +473,9 @@ div.valid {
 }
 #dkk input,button {
     border-radius: 0px!important;
+}
+
+/* Bóng */
+.bong {
+    box-shadow: 0px 0px 10px -1px rgba(128, 128, 128, 0.719);
 }
