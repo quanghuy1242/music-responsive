@@ -142,7 +142,7 @@ function next() {
                     },
                     matkhaudk: {
                         required: true,
-                        min: 8
+                        minlength: 8
                     },
                     rematkhaudk: {
                         equalTo: "#mk",
@@ -172,7 +172,7 @@ function next() {
                     },
                     matkhaudk: {
                         required: "Mật khẩu không để trống.",
-                        min: "Mật khẩu tối thiểu 8 kí tự."
+                        minlength: "Mật khẩu tối thiểu 8 kí tự."
                     },
                     rematkhaudk: {
                         equalTo: "Mật khẩu không khớp.",
