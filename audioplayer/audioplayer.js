@@ -72,6 +72,7 @@ function PlayNow() {
     if (audio.paused) {
         audio.play();
         btnPlay.innerHTML = "<i class='material-icons'>pause</i>";
+        console.log("play");
     }
     else if (audio.ended) {
         audio.currentTime = 0;
@@ -80,6 +81,7 @@ function PlayNow() {
     else if(audio.play) {
         audio.pause();
         btnPlay.innerHTML = "<i class='material-icons'>play_arrow</i>";
+        console.log("pause");
     }
 }
 // fires when Pause button is clicked
@@ -128,3 +130,9 @@ function MuteNow() {
     }
 }
 
+function shuffle(array) {
+    var random = array.map(Math.random);
+    array.sort(function (a, b) {
+        return random[array.indexOf(a)] - random[array.indexOf(b)];
+    });
+}

@@ -33,6 +33,7 @@ var tenbh = document.getElementsByClassName("baihatalbum");
 var tencs = document.getElementsByClassName("nghesialbum");
 var dangphat = document.getElementsByClassName("dangphat");
 var btnPlay = document.getElementById("btnPlay");
+var audio = document.getElementById("audioaudio");
 
 function Playnhac(i) {
     var stt = document.getElementById("stt").innerHTML;
@@ -99,6 +100,30 @@ function next() {
         dangphat[stt].style.opacity = "1";
     }
 }
+var thutubh = document.getElementsByClassName("thutubaihat");
+audio.addEventListener('ended',function(){
+    if(document.getElementById("stt").innerHTML == thutubh.length){
+        Playnhac(0);
+    }
+    else {
+        next();
+    }
+    
+},false);
+// console.log(thutubh.length);
+var loop1 = document.getElementById("loop1");
+function looop1(){
+    if(audio.loop) {
+        audio.loop = false;
+        loop1.innerHTML = '<i class="material-icons">repeat</i>';
+    }
+    else {
+        audio.loop = true;
+        loop1.innerHTML = '<i class="material-icons">repeat_one</i>';
+    }
+    
+}
+
 (function () {
     'use strict';
     window.addEventListener('load', function () {
