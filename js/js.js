@@ -105,20 +105,6 @@ function next() {
     }
 }
 var thutubh = document.getElementsByClassName("thutubaihat");
-audio.addEventListener('ended',function(){
-    if(document.getElementById("s").innerHTML == "off") {
-        if(document.getElementById("stt").innerHTML == thutubh.length){
-            Playnhac(0);
-        }
-        else {
-            next();
-        }
-    } else {
-        var nn = Math.floor(Math.random() * thutubh.length) + 0;
-        Playnhac(nn);
-    }
-    
-},false);
 // var nn = Math.floor(Math.random() * thutubh.length) + 0;
 // console.log(nn);
 var loop1 = document.getElementById("loop1");
@@ -251,3 +237,18 @@ function shufflesong() {
         });
     }, false);
 })();
+
+audio.addEventListener('ended',function(){
+    if(document.getElementById("s").innerHTML == "off") {
+        if(document.getElementById("stt").innerHTML == thutubh.length){
+            Playnhac(0);
+        }
+        else {
+            next();
+        }
+    } else {
+        var nn = Math.floor(Math.random() * thutubh.length) + 0;
+        Playnhac(nn);
+    }
+    
+},false);
