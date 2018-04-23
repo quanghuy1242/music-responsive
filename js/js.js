@@ -81,36 +81,46 @@ function prev() {
 
 function next() {
     var stt = document.getElementById("stt").innerHTML;
-
-    if (stt < tenbh.length) {
-        if (audio.play) {
-            btnPlay.innerHTML = "<i class='material-icons'>pause</i>";
-        } else {
-            btnPlay.innerHTML = "<i class='material-icons'>play_arrow</i>";
+    if(document.getElementById("s").innerHTML == "off") {
+        if (stt < tenbh.length) {
+            if (audio.play) {
+                btnPlay.innerHTML = "<i class='material-icons'>pause</i>";
+            } else {
+                btnPlay.innerHTML = "<i class='material-icons'>play_arrow</i>";
+            }
+            document.getElementById("namesong").innerHTML = tenbh[stt].innerHTML;
+            document.getElementById("nameart").innerHTML = tencs[stt].innerHTML;
+            document.getElementById("audioaudio").src = nhacs[stt];
+            document.getElementById("audioaudio").autoplay = "autoplay";
+            document.getElementById("stt").innerHTML = stt * 1 + 1;
+    
+            for (var x = 0; x < dangphat.length; x++) {
+                dangphat[x].style.opacity = "0";
+            }
+            dangphat[stt].style.opacity = "1";
         }
-        document.getElementById("namesong").innerHTML = tenbh[stt].innerHTML;
-        document.getElementById("nameart").innerHTML = tencs[stt].innerHTML;
-        document.getElementById("audioaudio").src = nhacs[stt];
-        document.getElementById("audioaudio").autoplay = "autoplay";
-        document.getElementById("stt").innerHTML = stt * 1 + 1;
-
-        for (var x = 0; x < dangphat.length; x++) {
-            dangphat[x].style.opacity = "0";
-        }
-        dangphat[stt].style.opacity = "1";
+    } else {
+        var nn = Math.floor(Math.random() * thutubh.length) + 0;
+        Playnhac(nn);
     }
 }
 var thutubh = document.getElementsByClassName("thutubaihat");
 audio.addEventListener('ended',function(){
-    if(document.getElementById("stt").innerHTML == thutubh.length){
-        Playnhac(0);
-    }
-    else {
-        next();
+    if(document.getElementById("s").innerHTML == "off") {
+        if(document.getElementById("stt").innerHTML == thutubh.length){
+            Playnhac(0);
+        }
+        else {
+            next();
+        }
+    } else {
+        var nn = Math.floor(Math.random() * thutubh.length) + 0;
+        Playnhac(nn);
     }
     
 },false);
-// console.log(thutubh.length);
+// var nn = Math.floor(Math.random() * thutubh.length) + 0;
+// console.log(nn);
 var loop1 = document.getElementById("loop1");
 function looop1(){
     if(audio.loop) {
@@ -122,6 +132,17 @@ function looop1(){
         loop1.innerHTML = '<i class="material-icons">repeat_one</i>';
     }
     
+}
+
+function shufflesong() {
+    if(document.getElementById("s").innerHTML == "on") {
+        document.getElementById("s").innerHTML = "off";
+        document.getElementById("ss").style.color = "#505050";
+    }
+    else {
+        document.getElementById("s").innerHTML = "on";
+        document.getElementById("ss").style.color = "#398791";
+    }
 }
 
 (function () {
