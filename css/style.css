@@ -479,3 +479,6 @@ div.valid {
 .bong {
     box-shadow: 0px 2px 7px -1px rgba(128, 128, 128, 0.719);
 }
+.popover-body {
+    text-align: center;
+}
