@@ -415,7 +415,9 @@ h4.card-title {
     border: none !important;
     box-shadow: none !important;
 }
-
+.myaudioplayer .popover {
+    display: none;
+}
 
 /* material ico */
 
