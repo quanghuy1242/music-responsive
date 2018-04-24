@@ -358,7 +358,7 @@ h4.card-title {
 }
 .myaudioplayer .row {
     margin-left: 0px !important;
-    /* margin-right: 0px !important; */
+    margin-right: 0px !important;
 }
 .btn-group {
     margin-top: -10px;
@@ -418,7 +418,6 @@ h4.card-title {
 .myaudioplayer .popover {
     display: none;
 }
-
 /* material ico */
 
 
@@ -490,7 +489,7 @@ div.valid {
     border-radius: 50%;
 }
 #dnn input:focus {
-    border-color: rgba(57, 135, 145,0.8);
+    border-color: #398791cc;
     box-shadow: 0px 0px 0px 4px rgba(57, 135, 145, 0.356);
     /* outline: 0 none; */
 }
@@ -516,4 +515,17 @@ div.valid {
 }
 .popover-body {
     text-align: center;
+}
+@media screen and (max-width:767px) {
+    #seekbar {
+        display: none;
+    }
+    
+    .myaudioplayer #igab {
+        width: 320px;
+    }
+
+    .myaudioplayer #igbh {
+        width: 200px;
+    }
 }

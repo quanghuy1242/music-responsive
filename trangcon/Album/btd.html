@@ -206,8 +206,8 @@
 
                                     <table class="table table-sm">
                                         <tr>
-                                            <td colspan="2">
-                                                <div class="input-group input-group-sm">
+                                            <td colspan="2" class="row">
+                                                <div class="input-group input-group-sm mx-auto" id="igab">
                                                     <div class="input-group-prepend">
                                                         <button class="btn btn-link" id="btnpn" onclick="prev()">
                                                         <i class="material-icons">skip_previous</i>
@@ -224,14 +224,14 @@
                                                         </button>
                                                     </div>
                                                     <div class="input-group-prepend">
-                                                        <button class="btn btn-link" id="BlblTime">
-                                                            <label id="lblTime">00:00</label>
+                                                        <button class="btn btn-link" id="BlblTime" onclick="lui5giay()">
+                                                            <label id="lblTime" data-toggle="tooltip" title="Lùi 5s">00:00</label>
                                                         </button>
                                                     </div>
                                                     <input type="range" step="any" id="seekbar" onchange="ChangeTheTime()" style="margin-top: 10px" class="form-control" value="0">
                                                     <div class="input-group-prepend">
-                                                        <button class="btn btn-link" id="Bendtime">
-                                                            <label id="endtime">00:00</label>
+                                                        <button class="btn btn-link" id="Bendtime" onclick="them5giay()">
+                                                            <label id="endtime" data-toggle="tooltip" title="Tiến 5s">00:00</label>
                                                         </button>
                                                     </div>
                                                     <div class="input-group-prepend">
@@ -240,7 +240,7 @@
                                                         </button>
                                                     </div>
                                                     <div class="input-group-prepend">
-                                                        <button class="btn btn-link" id="volumev" data-toggle="popover" data-placement="top" data-content="<input type='range' min='0' max='1' step='0.1' value='1' id='volume' onchange='ChangeVolume()' style='margin-bottom: 10px;margin-top: 10px;'><script>document.getElementById('volume').value=document.getElementById('audioaudio').volume</script>">
+                                                        <button class="btn btn-link" id="volumev" data-toggle="popover" data-placement="top" data-content="<input type='range' min='0' max='1' step='0.1' value='1' id='volume' onchange='ChangeVolume()' style='margin-bottom: 10px;margin-top: 10px;width:100px'><script>document.getElementById('volume').value=document.getElementById('audioaudio').volume</script>">
                                                             <i class="material-icons">volume_down</i>
                                                         </button>
                                                     </div>

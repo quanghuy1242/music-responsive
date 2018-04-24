@@ -136,3 +136,23 @@ function shuffle(array) {
         return random[array.indexOf(a)] - random[array.indexOf(b)];
     });
 }
+
+function them5giay() {
+    var add5s = audio.currentTime + 5;
+    if (add5s > audio.duration) {
+        audio.currentTime = audio.duration;
+    }
+    else {
+        audio.currentTime = add5s;
+    }
+}
+
+function lui5giay() {
+    var add5s = audio.currentTime - 5;
+    if (add5s <= 0) {
+        audio.currentTime = 0;
+    }
+    else {
+        audio.currentTime = add5s;
+    }
+}
