@@ -8,7 +8,7 @@ window.onload = function () {
     // getduration();
     audio.addEventListener('timeupdate', UpdateTheTime, false);
     audio.addEventListener('durationchange', SetSeekBar, false);
-    volumeRange.value = audio.volume;
+    // document.getElementById("volume").value = audio.volume;
     // PlayNow();
 }
 
@@ -92,7 +92,7 @@ function PauseNow() {
 }
 var tempp = false;
 function ChangeVolume() {
-    var myVol = volumeRange.value;
+    var myVol = document.getElementById("volume").value;
     document.getElementById("audioaudio").volume = myVol;
     if (myVol == 0) {
         document.getElementById("audioaudio").muted = true;

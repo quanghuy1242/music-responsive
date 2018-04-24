@@ -411,6 +411,12 @@ h4.card-title {
     /* animation: fadeOut 0.5s; */
     
 }
+.myaudioplayer .form-control {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+
 /* material ico */
 
 

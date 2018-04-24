@@ -207,40 +207,48 @@
                                     <table class="table table-sm">
                                         <tr>
                                             <td colspan="2">
-                                                <input type="range" step="any" id="seekbar"
-                                                onchange="ChangeTheTime()" style="margin-top: 6px;width: 100%;" value="0">
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="row" style="padding-bottom: 0px;border-top: none;width: 100%;margin-top: -9px;">
-                                                <div class="btn-group btn-group-sm mx-auto">
-                                                    <button class="btn btn-link" id="btnpn" onclick="prev()">
+                                                <div class="input-group input-group-sm">
+                                                    <div class="input-group-prepend">
+                                                        <button class="btn btn-link" id="btnpn" onclick="prev()">
                                                         <i class="material-icons">skip_previous</i>
-                                                    </button>
-                                                    <button class="btn btn-link" id="btnPlay" onclick="PlayNow()">
-                                                            <i class="material-icons">play_arrow</i>
-                                                    </button>
-                                                    <button class="btn btn-link" id="btnpn" onclick="next()">
-                                                        <i class="material-icons">skip_next</i>
-                                                    </button>
-                                                    <button class="btn btn-link" id="BlblTime">
-                                                            <label id="lblTime">00:00</label>
-                                                    </button>
-                                                    <button class="btn btn-link" id="Bendtime">
-                                                            <label id="endtime">00:00</label>
-                                                    </button>
-                                                    <button class="btn btn-link" id="volumev" onclick="MuteNow()">
-                                                        <i class="material-icons">volume_down</i>
-                                                    </button>
-                                                    <div class="btn btn-link" id="volumea">
-                                                        <input type="range" min="0" max="1" step="0.1" value="1" id="volume" onchange="ChangeVolume()" style="margin-bottom: 10px;width: 50px;margin-top: 10px;">
+                                                        </button>
                                                     </div>
-                                                    <button class="btn btn-link" id="loop1" onclick="looop1()">
+                                                    <div class="input-group-prepend">
+                                                        <button class="btn btn-link" id="btnPlay" onclick="PlayNow()">
+                                                            <i class="material-icons">play_arrow</i>
+                                                        </button>
+                                                    </div>
+                                                    <div class="input-group-prepend">
+                                                        <button class="btn btn-link" id="btnpn" onclick="next()">
+                                                        <i class="material-icons">skip_next</i>
+                                                        </button>
+                                                    </div>
+                                                    <div class="input-group-prepend">
+                                                        <button class="btn btn-link" id="BlblTime">
+                                                            <label id="lblTime">00:00</label>
+                                                        </button>
+                                                    </div>
+                                                    <input type="range" step="any" id="seekbar" onchange="ChangeTheTime()" style="margin-top: 10px" class="form-control" value="0">
+                                                    <div class="input-group-prepend">
+                                                        <button class="btn btn-link" id="Bendtime">
+                                                            <label id="endtime">00:00</label>
+                                                        </button>
+                                                    </div>
+                                                    <div class="input-group-prepend">
+                                                        <button class="btn btn-link" id="loop1" onclick="looop1()">
                                                             <i class="material-icons">repeat</i>
-                                                    </button>
-                                                    <button class="btn btn-link" id="shuffle" onclick="shufflesong()">
+                                                        </button>
+                                                    </div>
+                                                    <div class="input-group-prepend">
+                                                        <button class="btn btn-link" id="volumev" data-toggle="popover" data-placement="top" data-content="<input type='range' min='0' max='1' step='0.1' value='1' id='volume' onchange='ChangeVolume()' style='margin-bottom: 10px;margin-top: 10px;'>">
+                                                            <i class="material-icons">volume_down</i>
+                                                        </button>
+                                                    </div>
+                                                    <div class="input-group-prepend">
+                                                        <button class="btn btn-link" id="shuffle" onclick="shufflesong()">
                                                         <i class="material-icons" id="ss">shuffle</i>
-                                                </button>
+                                                    </button>
+                                                    </div>
                                                 </div>
                                             </td>
                                         </tr>
