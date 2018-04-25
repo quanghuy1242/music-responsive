@@ -522,10 +522,10 @@ div.valid {
     }
     
     .myaudioplayer #igab {
-        width: 320px;
+        width: inherit;
     }
 
     .myaudioplayer #igbh {
-        width: 200px;
+        width: inherit;
     }
 }
